@@ -1,12 +1,12 @@
 #Warning: ports do not change
 
 ##### HOSTNAME #####
-HOST_NAME=madblackpixels.com
+HOST_NAME=s0565b32a.fastvps-server.com
 
 ##### Postgresql #####
-POSTGRES_DB=madblackpixel
-POSTGRES_USER=madblackpixel
-POSTGRES_PASSWORD=WEscjwf324lsdfk)3ksd
+POSTGRES_DB=uvesta_8234h3ks
+POSTGRES_USER=uvesta_234k234jdf
+POSTGRES_PASSWORD=WEscjwf324lsddfk)3ksd
 
 POSTGRES_HOST=database
 POSTGRES_PORT=5432
@@ -14,7 +14,7 @@ POSTGRES_PORT=5432
 ##### Backend #####
 BACKEND_PORT=13201
 ALLOW_HOST_LIST='backend'
-CORS_LIST='madblackpixels.com','www.madblackpixels.com'
+CORS_LIST='s0565b32a.fastvps-server.com','www.s0565b32a.fastvps-server.com'
 
 ##### Nginx #####
 NGINX_PORT=15201

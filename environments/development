@@ -4,9 +4,9 @@
 HOST_NAME=0.0.0.0
 
 ##### Postgresql #####
-POSTGRES_DB=madblackpixel
-POSTGRES_USER=madblackpixel
-POSTGRES_PASSWORD=WEscjwf324lsdfk)3ksd
+POSTGRES_DB=uvesta
+POSTGRES_USER=uvesta
+POSTGRES_PASSWORD=WEscjwf
 
 POSTGRES_HOST=database
 POSTGRES_PORT=5432
