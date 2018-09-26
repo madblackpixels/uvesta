@@ -4,8 +4,8 @@
 HOST_NAME=s0565b32a.fastvps-server.com
 
 ##### Postgresql #####
-POSTGRES_DB=uvesta-8234h3ks
-POSTGRES_USER=uvesta-234k234jdf
+POSTGRES_DB=uvesta8234h3ks
+POSTGRES_USER=uvesta234k234jdf
 POSTGRES_PASSWORD=WEscjwf324lsddfk)3ksd
 
 POSTGRES_HOST=database
