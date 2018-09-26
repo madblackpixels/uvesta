@@ -1,24 +1,36 @@
-#Warning: ports do not change
-
-##### HOSTNAME #####
+######## ARGS #######
+PROTOCOL=http
 HOST_NAME=s0565b32a.fastvps-server.com
+FRONTEND_REQ_HOST=s0565b32a.fastvps-server.com
 
-##### Postgresql #####
-POSTGRES_DB=uvesta8234h3ks
-POSTGRES_USER=uvesta234k234jdf
-POSTGRES_PASSWORD=WEscjwf324lsddfk)3ksd
+POSTGRES_DB=uvesta
+POSTGRES_USER=uvesta
+POSTGRES_PASSWORD=1Fscj(4-24delsd-k)3kpeYd
 
-POSTGRES_HOST=database
+ADMIN_NAME='root'
+ADMIN_PASS='Qwerty1!qaz!'
+ADMIN_MAIL='madblackpixels@yandex.ru'
+
+SECRET_KEY=']da7114gsvs68dc-j62vfws124)(sdfxv5vxq45pqe*6*dqunn-sgg'
+
+STATIC_URL='https://s0565b32a.fastvps-server.com:13660/static/'
+MEDIA_URL='https://s0565b32a.fastvps-server.com:13660/media/'
+
+
+##### CONSTANTS #####
+BACKEND_SERVICE_HOST=0.0.0.0
+BACKEND_SERVICE_PORT=11011
+
 POSTGRES_PORT=5432
+POSTGRES_HOST=database
 
-##### Backend #####
-BACKEND_PORT=13201
-ALLOW_HOST_LIST='backend'
-CORS_LIST='s0565b32a.fastvps-server.com','www.s0565b32a.fastvps-server.com'
+BACKEND_NGINX_PORT=13660 
+FRONTEND_REQ_PORT=13660
 
-##### Nginx #####
-NGINX_PORT=15201
-ALLOW_DOMAIN=all
+ALLOWED_LIST='backend-app'
+CORS_LIST='s0565b32a.fastvps-server.com:13660'
 
-##### Frontend #####
-FRONTEND_PORT=5000
+STATIC_ROOT='/static/'
+MEDIA_ROOT='/media/'
+
+#

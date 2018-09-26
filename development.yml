@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+  database:
+    image: postgres:9.6
+    restart: always
+    env_file: 
+      - ./environments/development
+    ports:    
+      - "$POSTGRES_PORT"
+
+  backend-app:
+    build: ./backend-app
+    restart: always
+    command: /backend/etc/setup_django.sh 
+    ports:
+      - "$BACKEND_SERVICE_PORT:$BACKEND_SERVICE_PORT"
+    env_file:
+      - ./environments/development
+    depends_on:
+      - database
+    volumes:
+      - "./backend-app:/backend"

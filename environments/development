@@ -1,24 +1,38 @@
-#Warning: ports do not change
+######## ARGS #######
+PROTOCOL=http
 
-##### HOSTNAME #####
-HOST_NAME=0.0.0.0
-
-##### Postgresql #####
 POSTGRES_DB=uvesta
 POSTGRES_USER=uvesta
-POSTGRES_PASSWORD=WEscjwf
+POSTGRES_PASSWORD=WEscjw
 
-POSTGRES_HOST=database
+ADMIN_NAME='root'
+ADMIN_PASS='Qwerty1!'
+ADMIN_MAIL='admin@example.com'
+
+SECRET_KEY='1b711&ctkj3kvs68dc-j62vfws124n0hvxq&pqe16*dqunn-s&'
+
+
+
+##### CONSTANTS #####
+ENV=development
+
+HOST_NAME=0.0.0.0
+BACKEND_SERVICE_HOST=0.0.0.0
+BACKEND_SERVICE_PORT=8000
+
+FRONTEND_REQ_HOST=127.0.0.1
+FRONTEND_REQ_PORT=8000
+
 POSTGRES_PORT=5432
+POSTGRES_HOST=database
 
-##### Backend #####
-BACKEND_PORT=13201
-ALLOW_HOST_LIST='backend'
-CORS_LIST='127.0.0.1','localhost'
+ALLOWED_LIST='localhost','127.0.0.1'
+CORS_LIST='localhost','127.0.0.1'
 
-##### Nginx #####
-NGINX_PORT=15201
-ALLOW_DOMAIN=all
+STATIC_URL='/static/'
+MEDIA_URL='/media/'
 
-##### Frontend #####
-FRONTEND_PORT=5000
+STATIC_ROOT='/backend/static_files/'
+MEDIA_ROOT='/backend/media_files/'
+
+#

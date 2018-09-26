@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+
+  database:
+    image: postgres:9.6
+    restart: always
+    env_file: 
+      - ./environments/production
+    ports:    
+      - "$POSTGRES_PORT"
+
+  backend-app:
+    build: ./backend-app
+    restart: always
+    command: /backend/etc/setup_django.sh  
+    ports:
+      - "$BACKEND_SERVICE_PORT"
+    env_file:
+      - ./environments/production
+    depends_on:
+      - database
+    volumes:
+      - static:/backend/static_files
+      - media:/backend/media_files
+
+  backend-nginx:
+    build: ./backend-nginx
+    restart: always
+    env_file:
+      - ./environments/production
+    ports:
+      - "$BACKEND_NGINX_PORT:$BACKEND_NGINX_PORT"
+    depends_on:
+      - backend-app
+    volumes:
+      - static:/static_files
+      - media:/media_files
+
+  frontend-app:
+    build: ./frontend-app
+    env_file:
+      - ./environments/production
+    volumes:
+      - frontend:/frontend/build
+    depends_on:
+      - backend-app
+
+  frontend-nginx:
+    build: ./frontend-nginx
+    restart: always
+    env_file:
+      - ./environments/production
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - frontend-app
+    volumes:
+      - frontend:/frontend
+
+
+volumes:
+  frontend:
+  static:
+  media:
+

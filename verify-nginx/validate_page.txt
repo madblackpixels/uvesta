@@ -1,0 +1,6 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>Verification: 7e54385bb101a307</body>
+</html>

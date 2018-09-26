@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  verify-nginx:
+    build: ./verify-nginx
+    restart: always
+    ports:
+      - "80:80"

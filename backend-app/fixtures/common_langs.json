@@ -1,0 +1,37 @@
+[
+  {
+    "pk": 1,
+    "model": "common.lang",
+    "fields": {
+      "ru": {
+        "main_intro_title":"MadBlackPixels",
+        "main_intro_sub_title":"Анализ. Проектирование. Разработка.",
+
+        "main_lead_title":"Давайте общаться",
+        "main_lead_input_name":"Ваше имя",
+        "main_about_text":"Мы умеем создавать работающие сайты, web-сервисы и интернет-магазины для Вашего бизнеса.",
+        "main_lead_input_mail":"Ваша почта",
+        "main_lead_input_problem":"Опишите ваш проект",
+        "main_lead_hello_description":"Мы любим, когда нам пишут. Пишите нам больше!",
+        "main_lead_join_description":"Можешь отправить свое резюме, если хочешь работать с нами.",
+        "main_lead_submit_btn":"отправить",
+        "main_lead_modal_title":"Супер!",
+        "main_lead_modal_body":"Мы с Вами обязательно свяжемся."
+      },
+      "en": {
+        "main_intro_title":"MadBlackPixels",
+        "main_intro_sub_title":"Analysis. Design. Development.",
+        "main_about_text":"We are able to create working websites, web-services and online stores for your business.",
+        "main_lead_title":"Let's talk",
+        "main_lead_input_name":"Your name",
+        "main_lead_input_mail":"Your mail",
+        "main_lead_input_problem":"How can we can help?",
+        "main_lead_hello_description":"Write to us, we love it!",
+        "main_lead_join_description":"Send your story if you want join to us.",
+        "main_lead_submit_btn":"send",
+        "main_lead_modal_title":"Cool!",
+        "main_lead_modal_body":"We will contact you."
+      }
+    }
+  }
+]

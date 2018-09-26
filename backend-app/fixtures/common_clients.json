@@ -1,0 +1,36 @@
+[
+  {
+    "pk": 1,
+    "model": "common.client",
+    "fields": {
+      "name": "q-expert",
+      "show": true,
+      "logo_black": "/clients/q-expert_black.png",
+      "logo_color": "/clients/q-expert_color.png",
+      "system_date": "2018-08-03"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "common.client",
+    "fields": {
+      "name": "mailru",
+      "show": true,
+      "logo_black": "/clients/mail_black.png",
+      "logo_color": "/clients/mail_color.png",
+      "system_date": "2018-08-03"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "common.client",
+    "fields": {
+      "name": "skit",
+      "show": true,
+      "logo_black": "/clients/skit_black.png",
+      "logo_color": "/clients/skit_color.png",
+      "system_date": "2018-08-03"
+    }
+  }
+
+]
