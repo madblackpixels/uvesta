@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+
+  frontend:
+    restart: always
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:$FRONTEND_PORT"
+    depends_on:
+      - nginx
+
+  backend:
+    restart: always
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./environments/$ENV_NAME
+    command: /backend/etc/setup.sh
+    ports:
+      - "$BACKEND_PORT"
+    depends_on:
+      - database
+
+  database:
+    restart: always
+    image:   postgres:9.6
+    env_file:
+      - ./environments/$ENV_NAME
+    ports:
+      - "$POSTGRES_PORT"
+
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    env_file:
+      - ./environments/$ENV_NAME
+    ports:
+      - "$NGINX_PORT:$NGINX_PORT"
+    depends_on:
+      - backend
+
+
+#redis
+

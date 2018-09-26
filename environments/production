@@ -1,0 +1,24 @@
+#Warning: ports do not change
+
+##### HOSTNAME #####
+HOST_NAME=madblackpixels.com
+
+##### Postgresql #####
+POSTGRES_DB=madblackpixel
+POSTGRES_USER=madblackpixel
+POSTGRES_PASSWORD=WEscjwf324lsdfk)3ksd
+
+POSTGRES_HOST=database
+POSTGRES_PORT=5432
+
+##### Backend #####
+BACKEND_PORT=13201
+ALLOW_HOST_LIST='backend'
+CORS_LIST='madblackpixels.com','www.madblackpixels.com'
+
+##### Nginx #####
+NGINX_PORT=15201
+ALLOW_DOMAIN=all
+
+##### Frontend #####
+FRONTEND_PORT=5000
