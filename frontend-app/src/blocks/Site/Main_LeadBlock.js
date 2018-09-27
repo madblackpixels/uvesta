@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 
 // bootstrap
-import { Grid, Row } from 'react-bootstrap'
+import { Grid, Row, Col, Glyphicon } from 'react-bootstrap'
 
 // components
-import Lead__ContactForm   from '../../components/Lead__ContactForm'
-import Lead__ContactText   from '../../components/Lead__ContactText'
+
 
 // logic
 import { sendPOSTRequest } from '../../logic/General_ApiReq'
@@ -52,22 +51,40 @@ export default class Main_LeadBlock extends Component {
     render() {
 
         return(
-            <Grid fluid={true} className="no-padding">
+            <Grid fluid={true} className="background-color__blood-red no-padding">
 
-                <Grid className="block__container">
-                    <h2 className="block__h2">{this.props.content.main_lead_title}</h2>
-                    <Row className="block__lead">
-
-                        <form onSubmit={this.handleSubmit}>
-
-                            <Lead__ContactForm
-                                content={this.props.content}
-                                update_leadStates={this.update_leadStates.bind(this)}
-                                onRef={ref => (this.child = ref)} />
-                            <Lead__ContactText content={this.props.content} data={this.state}/>
-
-                        </form>
-
+                <Grid className="block__lead">
+                    <Row>
+                        <Col xs={12} sm={6} md={6} lg={6}>
+                            <p className="text-color__white block__lead-call-action">
+                                Оставьте заявку прямо сейчас на бесплатную консультацию специалиста
+                                и получите:
+                            </p>
+                        </Col>
+                        <Col xs={6} sm={6} md={6} lg={6} className="text-color__white">
+                            hell
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12} sm={6} md={8} lg={8}>
+                            <ul>
+                                <li>
+                                    <Glyphicon glyph="ok" className="text-color__white glyphicon__margin"/>
+                                    <span className="text-color__white">
+                                        Бесплатный анализ всех документов и ситуации по вашему делу.
+                                    </span>
+                                </li>
+                                <li>
+                                    <Glyphicon glyph="ok" className="text-color__white glyphicon__margin"/>
+                                    <span className="text-color__white">
+                                        Бесплатную проверку должника на платежеспособность по специальным базам.
+                                    </span>
+                                </li>
+                            </ul>
+                        </Col>
+                        <Col xs={12} sm={6} md={4} lg={4} className="text-color__white">
+                            hell
+                        </Col>
                     </Row>
                 </Grid>
 

@@ -1,29 +1,27 @@
 import React, { Component } from 'react'
-import Headroom from 'react-headroom'
 
 // bootstrap
-import { Grid } from 'react-bootstrap'
+import { Grid, Row, Col } from 'react-bootstrap'
 
 // components
-import Header__SiteLogo         from '../../components/Header__SiteLogo'
-import Header__SiteLangBtnGroup from '../../components/Header__SiteLangBtnGroup'
-import Header__SlideMenuBtn     from '../../components/Header__SlideMenuBtn'
-
+import Header__SiteLogo     from '../../components/Header__SiteLogo'
+import Header__Info         from '../../components/Header__Info'
 
 // code
 export default class Header extends Component {
 
     render() {
         return(
-            <Headroom>
-                <Grid fluid={true} className="headroom-wrapper__max_width background__black_small">
+            <Grid fluid={true} className="block__header">
+                <Grid>
+                    <Row>
 
-                    <Header__SiteLogo />
-                    <Header__SlideMenuBtn       update_AppStates={this.props.update_AppStates} />
-                    <Header__SiteLangBtnGroup   update_AppStates={this.props.update_AppStates} />
+                        <Header__SiteLogo />
+                        <Header__Info />
 
+                    </Row>
                 </Grid>
-            </Headroom>
+            </Grid>
         )
     }
 }

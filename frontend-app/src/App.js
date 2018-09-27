@@ -58,8 +58,6 @@ export default class App extends Component {
         return(
              <Grid fluid={true} className="no-padding">
                  <SiteHeader  update_AppStates={this.update_AppStates.bind(this)} />
-                 <SlideMenu   update_AppStates={this.update_AppStates.bind(this)} menuOpen={this.state.menuOpen} />
-
                  <ReactNotification ref={input => this.notificationDOMRef = input} />
 
                  <Switch>
