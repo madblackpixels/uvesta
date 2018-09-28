@@ -13,11 +13,31 @@ h1{
 h2{
     font-weight: 700;
     line-height: 36px;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 h3{
     font-weight: 700;
 }
+ul {
+  list-style: none;
+  margin-left: 10px;
+  padding-left: 0;
+}
+
+li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+li:before {
+  content: "";
+  padding-right: 5px;
+}
+
+
+
+
+/* - > ----------   Common styles  ---------- < - */
 .no-padding{
     padding: 0;
 }
@@ -34,25 +54,38 @@ h3{
     font-size: 28px;
     font-weight: 700;
 }
+.text-bold{
+    font-weight: 700;
+}
+.block__content-part{
+    padding-top: 42px;
+    padding-bottom: 56px;
+}
 .glyphicon__margin{
     margin-right: 8px;
 }
-ul {
-  list-style: none;
-  margin-left: 10px;
-  padding-left: 0;
+.form-control{
+    border-radius: 0;
+    resize: none;
+    height: 30px;
+}
+.form-textarea{
+    min-height: 150px;
+    border: 1px solid #999;
+    padding: 8px;
+}
+.form-textarea:focus{
+    box-shadow: none;
+    border-color: #61221d;
+    outline: 0;
+}
+.form-textarea:active{
+    box-shadow: none;
+    border-color: #61221d;
 }
 
-li {
-  padding-left: 1em;
-  text-indent: -1em;
-  font-weight: 700;
-}
 
-li:before {
-  content: "";
-  padding-right: 5px;
-}
+
 
 
 /* - > Colors < - */
@@ -122,6 +155,42 @@ li:before {
     padding-bottom: 44px;
 }
 
+/* - > ----------   Block feedback  ---------- < - */
+.coverflow__container__1P-xE{
+    background: none!important;
+}
+.coverflow__container__1P-xE:focus{
+    outline: 0;
+}
+.coverflow__figure__3bk_C{
+    box-shadow: none!important;
+    border: 16px solid #fff;
+}
+
+
+
+/* - > ----------   Block contacts  ---------- < - */
+.ya-maps__border{
+    border: 16px solid #fff;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 767px) {
+    .block-contact__address-list{
+        padding-top: 5%;
+        padding-bottom: 0;
+    }
+}
+@media (max-width: 766px) {
+    .block-contact__content{
+        padding-bottom: 0!important;
+    }
+    .block-contact__address-list{
+        padding-top: 0;
+        padding-bottom: 24px;
+    }
+}
 
 
 
@@ -219,17 +288,37 @@ li:before {
   white-space: pre-line;
 }
 
-#triangle-top-left__white__reverse{
+#triangle-top-left__white{
     width: 35%;
 	height: 0;
 	border-top: 30px solid #fff;
 	border-right: 35px solid transparent;
+}
+#triangle-top-right__white{
+    float: right;
+	width: 35%;
+	height: 0;
+	border-bottom: 40px solid #fff;
+	border-left: 45px solid transparent;
+}
+#triangle-top-left__white__bold{
+    width: 50%;
+	height: 0;
+	border-top: 40px solid #fff;
+	border-right: 45px solid transparent;
 }
 
 
 .madblackpixels:hover{
     color: #fff;
     text-decoration: underline;
+}
+
+
+@media (max-width: 766px) {
+    .text-center__small{
+        text-align: center;
+    }
 }
 
 

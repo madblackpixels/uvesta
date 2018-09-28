@@ -3,14 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "install": "^0.12.1",
+    "npm": "^6.4.1",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
+    "react-contenteditable": "^3.1.0",
+    "react-coverflow": "^0.2.16",
     "react-dom": "^16.5.2",
+    "react-input-mask": "^2.0.4",
     "react-notification-system": "^0.2.17",
     "react-notifications-component": "0.0.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.5",
-    "react-three": "^0.9.7"
+    "react-three": "^0.9.7",
+    "react-yandex-maps": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
