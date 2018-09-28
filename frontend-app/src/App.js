@@ -6,7 +6,6 @@ import { Grid } from 'react-bootstrap'
 
 // system general blocks
 import SiteHeader from './blocks/General/General_SiteHeader'
-import SlideMenu  from './blocks/General/General_SlideMenu'
 import Footer     from './blocks/General/General_SiteFooter'
 
 // notifications

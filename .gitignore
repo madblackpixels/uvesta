@@ -17,3 +17,4 @@ coverage/
 build/
 migrations/
 *.local
+package-lock.json
