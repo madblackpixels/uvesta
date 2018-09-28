@@ -1,7 +1,6 @@
 /* - > System < - */
 body{
     font-family: 'Roboto', sans-serif;
-    white-space: pre-line;
 }
 h1{
     font-weight: 900;
@@ -9,10 +8,12 @@ h1{
     letter-spacing: .5px;
     padding-top: 24px;
     padding-bottom: 24px;
+    text-transform: capitalize;
 }
 h2{
     font-weight: 700;
     line-height: 36px;
+    text-transform: capitalize;
 }
 h3{
     font-weight: 700;
@@ -40,7 +41,6 @@ ul {
   list-style: none;
   margin-left: 10px;
   padding-left: 0;
-  margin-bottom: -10px;
 }
 
 li {
@@ -55,10 +55,15 @@ li:before {
 }
 
 
-
 /* - > Colors < - */
 .background-color__blood-red {
     background-color: #61221d;
+}
+.background-color__bright-red {
+    background-color: #e32926;
+}
+.background-color__gray {
+    background-color: #ececec;
 }
 .text-color__white{
     color: #f7f7f7;
@@ -186,15 +191,27 @@ li:before {
 	border-bottom: 40px solid #61221d;
 	border-left: 45px solid transparent;
 }
-
 #triangle-topleft__thin-bright-small{
 	width: 65%;
 	height: 0;
 	border-top: 30px solid #e32926;
 	border-right: 35px solid transparent;
 }
+#triangle-bottomright__bold-bright {
+    float: right;
+	width: 50%;
+	height: 0;
+	border-bottom: 40px solid #e32926;
+	border-left: 45px solid transparent;
+}
 
-
+#triangle-bottomright__thin-white{
+    float: right;
+	width: 35%;
+	height: 0;
+	border-bottom: 30px solid #fff;
+	border-left: 35px solid transparent;
+}
 
 
 
@@ -202,12 +219,18 @@ li:before {
   white-space: pre-line;
 }
 
+#triangle-top-left__white__reverse{
+    width: 35%;
+	height: 0;
+	border-top: 30px solid #fff;
+	border-right: 35px solid transparent;
+}
 
 
-
-
-
-
+.madblackpixels:hover{
+    color: #fff;
+    text-decoration: underline;
+}
 
 
 

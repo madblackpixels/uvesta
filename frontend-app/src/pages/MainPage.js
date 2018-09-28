@@ -6,8 +6,10 @@ import { Grid } from 'react-bootstrap'
 // blocks
 import Main_IntroBlock   from '../blocks/Site/Main_IntroBlock'
 import Main_LeadBlock    from '../blocks/Site/Main_LeadBlock'
-import Main_Clients      from '../blocks/Site/Main_Clients'
 import Main_Team         from '../blocks/Site/Main_Team'
+import Main_Portfolio    from '../blocks/Site/Main_Portfolio'
+import Main_Feedback     from '../blocks/Site/Main_Feedback'
+import Main_Contacts     from '../blocks/Site/Main_Contacts'
 
 // logic
 import { getSimpleData }    from '../logic/General_ApiReq'
@@ -45,6 +47,9 @@ export default class MainPage extends Component {
                 <Main_IntroBlock />
                 <Main_LeadBlock />
                 <Main_Team />
+                <Main_Portfolio />
+                <Main_Feedback />
+                <Main_Contacts />
             </Grid>
         )
     }

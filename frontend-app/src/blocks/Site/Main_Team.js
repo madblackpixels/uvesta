@@ -17,6 +17,7 @@ export default class Main_Team extends Component {
                     <h2 className="text-center">НАША КОМАНДА</h2>
 
                 </Grid>
+                <div id="triangle-bottomright__bold-bright"></div>
             </Grid>
         )
     }
