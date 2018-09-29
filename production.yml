@@ -21,8 +21,8 @@ services:
     depends_on:
       - database
     volumes:
-      - static:/backend/static_files
-      - media:/backend/media_files
+      - static:/static
+      - media:/media
 
   backend-nginx:
     build: ./backend-nginx
