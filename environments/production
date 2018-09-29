@@ -13,8 +13,8 @@ ADMIN_MAIL='madblackpixels@yandex.ru'
 
 SECRET_KEY=']da7114gsvs68dc-j62vfws124)(sdfxv5vxq45pqe*6*dqunn-sgg'
 
-STATIC_URL='https://s0565b32a.fastvps-server.com:13660/static/'
-MEDIA_URL='https://s0565b32a.fastvps-server.com:13660/media/'
+STATIC_URL='http://s0565b32a.fastvps-server.com:13660/static/'
+MEDIA_URL='http://s0565b32a.fastvps-server.com:13660/media/'
 
 
 ##### CONSTANTS #####
