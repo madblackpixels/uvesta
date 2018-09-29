@@ -1,0 +1,56 @@
+[
+  {
+    "pk": 1,
+    "model": "common.section",
+    "fields": {
+      "section": "Интро",
+      "status": "on",
+      "title": "не возвращают долг?"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "common.section",
+    "fields": {
+      "section": "Генератор лидов",
+      "status": "on",
+      "title": ""
+    }
+  },
+  {
+    "pk": 3,
+    "model": "common.section",
+    "fields": {
+      "section": "Команда",
+      "status": "on",
+      "title": "команда"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "common.section",
+    "fields": {
+      "section": "Портфолио",
+      "status": "on",
+      "title": "возвращенные долги нашим клиентам"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "common.section",
+    "fields": {
+      "section": "Форма для связи",
+      "status": "on",
+      "title": "получить бесплатный анализ ситуации"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "common.section",
+    "fields": {
+      "section": "Контакты",
+      "status": "on",
+      "title": "контакты"
+    }
+  }
+]

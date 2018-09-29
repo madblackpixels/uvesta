@@ -26,7 +26,7 @@ export default class Main_Feedback extends Component {
                         </h2>
                         <Row className="block__content-part">
 
-                            <Feedback__Feedback />
+                            <Feedback__Feedback addNotification={this.props.addNotification}/>
 
                         </Row>
                     </Grid>

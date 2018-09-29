@@ -15,7 +15,7 @@ export default class Contacts__Address extends Component {
                     <li>
                         <Glyphicon glyph="earphone" className="text-color__bright-red glyphicon__margin"/>
                         <span className="text-color__blood-red text-bold">
-                            +7 (900) 000 00 00
+                            {this.props.content.phone}
                         </span>
                     </li>
                 </ul>
@@ -23,7 +23,7 @@ export default class Contacts__Address extends Component {
                     <li>
                         <Glyphicon glyph="map-marker" className="text-color__bright-red glyphicon__margin"/>
                         <span className="text-color__blood-red text-bold">
-                            г. Москва, ул. Московская, 97
+                            {this.props.content.address}
                         </span>
                     </li>
                 </ul>

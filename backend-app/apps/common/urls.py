@@ -3,13 +3,16 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from apps.common import views
 
 urlpatterns = [
-    url(r'^main_page_content/$', views.IntroPage.as_view()),
-    # -------------------------------------------------------------- >
 
-    url(r'^client_block_content/$', views.ClientBlock.as_view()),
+    # General requests
+    url(r'^sections_list/$',  views.SectionsList.as_view()),
 
-    # -------------------------------------------------------------- >
-    url(r'^send_lead/$', views.LeadCreate.as_view())
+    # Block requests
+    url(r'^contacts_data/$',  views.ContactsData.as_view()),
+    url(r'^portfolio_data/$', views.PortfolioData.as_view()),
+
+
+    url(r'^send_feedback/$', views.FeedbackCreate.as_view()),
 ]
 
 

@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import Coverflow from 'react-coverflow';
-
-const fn = function () {
-  /* do your action */
-};
+import Coverflow from 'react-coverflow'
+import { StyleRoot } from 'radium'
 
 
 // code
@@ -12,31 +9,31 @@ export default class Portfolio__Slider extends Component {
     render() {
 
         return(
-            <Coverflow width="960" height="300"
+
+            <StyleRoot>
+                <Coverflow
                     displayQuantityOfSide={2}
-                    navigation={false}
+                    navigation
+                    enableHeading
                     enableScroll={false}
-                    clickable={true}
-                    active={0}
+                    media={{
+                        '@media (max-width: 900px)': {
+                            width: '600px',
+                            height: '300px'
+                        },
+                        '@media (min-width: 900px)': {
+                            width: '960px',
+                            height: '400px'
+                        }
+                    }}
                 >
-                <div
-                    onClick={() => fn()}
-                    onKeyDown={() => fn()}
-                    role="menuitem"
-                    tabIndex="0"
-                >
-                    <img
-                        src='/system/portfolio/portfolio3.jpg'
-                        alt='title or description3'
-                        style={{
-                            display: 'block',
-                            width: '100%',
-                        }}
-                    />
-                </div>
-                <img src='/system/portfolio/portfolio1.jpg' alt='title or description' data-action="http://yandex.ru/"/>
-                <img src='/system/portfolio/portfolio2.jpg' alt='title or description' data-action="http://yandex.ru/"/>
-            </Coverflow>
+
+                    {this.props.content.map(item => (
+                        <img key={item.id} src={item.image} alt={item.name} data-action="http://yandex.ru/"/>
+                    ))}
+
+                </Coverflow>
+            </StyleRoot>
         )
     }
 

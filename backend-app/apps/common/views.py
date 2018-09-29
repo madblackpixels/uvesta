@@ -1,9 +1,8 @@
-from apps.common.models      import Page, Lead, Client
-from apps.common.serializers import PagesSerializer, LeadSerializer, ClientSerializer
+from apps.common.models import Section, Contact, Feedback, Portfolio
+from apps.common.serializers import SectionSerializer, ContactsDataSerializer, FeedbackCreateSerializer, PortfolioDataSerializer
 
 # Permissions
 from rest_framework.permissions import AllowAny
-
 from rest_framework.generics import (
     CreateAPIView,
     ListAPIView
@@ -12,22 +11,25 @@ from rest_framework.generics import (
 
 # Pages views
 # -------------------------------------------------------------- >
-class IntroPage(ListAPIView):
-    serializer_class = PagesSerializer
-    queryset = Page.objects.filter(name='IntroPage')
+class SectionsList(ListAPIView):
+    serializer_class = SectionSerializer
+    queryset = Section.objects.all()
 
 
 # Blocks views
 # -------------------------------------------------------------- >
-class ClientBlock(ListAPIView):
-    serializer_class = ClientSerializer
-    queryset = Client.objects.filter(show=True)
+class ContactsData(ListAPIView):
+    serializer_class = ContactsDataSerializer
+    queryset = Contact.objects.all()
 
 
-# System views
+class PortfolioData(ListAPIView):
+    serializer_class = PortfolioDataSerializer
+    queryset = Portfolio.objects.all()
+
+
+# Forms
 # -------------------------------------------------------------- >
-class LeadCreate(CreateAPIView):
-    serializer_class = LeadSerializer
+class FeedbackCreate(CreateAPIView):
+    serializer_class = FeedbackCreateSerializer
     permission_classes = (AllowAny, )
-
-
