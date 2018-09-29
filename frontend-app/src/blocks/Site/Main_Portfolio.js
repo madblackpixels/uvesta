@@ -15,7 +15,7 @@ export default class Main_Portfolio extends Component {
         return(
 
             <Grid fluid={true} className="no-padding">
-                <Row className="no-padding background-color__bright-red">
+                <Row className="no-padding no-magrin background-color__bright-red">
                     <div id="triangle-top-left__white__bold"></div>
                 </Row>
 

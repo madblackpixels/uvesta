@@ -16,7 +16,7 @@ export default class Main_Contacts extends Component {
         return(
 
             <Grid fluid={true} className="no-padding">
-                <Row className="no-padding background-color__gray">
+                <Row className="no-padding no-magrin background-color__gray">
                     <div id="triangle-top-left__white"></div>
                 </Row>
 
