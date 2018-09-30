@@ -64,7 +64,7 @@ echo "MEDIA_URL = ${MEDIA_URL}"       >> ./backend-app/core/settings.py
 if [[ $env_name = "production" ]]; then
 
 	sed -i -e "s/CORS_ORIGIN_WHITELIST = ()/CORS_ORIGIN_WHITELIST = ($CORS_LIST)/" ./backend-app/core/settings.py
-	sed -i -e "s/DEBUG =/DEBUG = True/"                                           ./backend-app/core/settings.py
+	sed -i -e "s/DEBUG =/DEBUG = False/"                                           ./backend-app/core/settings.py
 
 else
 
