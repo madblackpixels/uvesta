@@ -1,6 +1,10 @@
 #!/bin/bash
 sleep 10
 
+# prepare media files
+cp -r /backend/media_files/* /media/
+rm -rf /backend/media_files
+
 # migrations
 
 python3 /backend/manage.py makemigrations
