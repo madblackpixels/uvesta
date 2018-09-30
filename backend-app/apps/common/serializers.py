@@ -67,7 +67,7 @@ class FeedbackCreateSerializer(serializers.ModelSerializer):
                 })
 
         #try:
-        Sender('test').send_mail()
+        #Sender('test').send_mail()
         #except: pass
 
         return Feedback.objects.create(**validated_data)
