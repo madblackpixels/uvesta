@@ -4,15 +4,7 @@
     "model": "common.portfolio",
     "fields": {
       "name": "test1",
-      "image": "media/portfolio/portfolio2.jpg"
-    }
-  },
-  {
-    "pk": 2,
-    "model": "common.portfolio",
-    "fields": {
-      "name": "test2",
-      "image": "media/portfolio/portfolio3.jpg"
+      "image": "portfolio/portfolio2.jpg"
     }
   }
 ]

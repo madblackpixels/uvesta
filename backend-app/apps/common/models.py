@@ -67,7 +67,7 @@ class Portfolio(models.Model):
         verbose_name_plural = 'Раздел: Портфолио'
 
     name = models.CharField(max_length=150, blank=False)
-    image = models.ImageField(upload_to='media/portfolio', default=False)
+    image = models.ImageField(upload_to='portfolio', default=False)
 
     def __str__(self):
         return self.name
