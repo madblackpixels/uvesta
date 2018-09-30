@@ -2,6 +2,7 @@
 sleep 10
 
 # prepare media files
+chmod 777 /media/
 cp -r /backend/media_files/* /media/
 rm -rf /backend/media_files
 
