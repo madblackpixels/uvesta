@@ -15,11 +15,13 @@ export default class Main_Portfolio extends Component {
 
     state = {
         content: [],
+        load: false
     };
 
     updateContent() {
         getSimpleData("/portfolio_data").then(result => this.setState({
-            content: result
+            content: result,
+            isLoad: true,    // waiting server response
         }))
     };
 
@@ -41,7 +43,7 @@ export default class Main_Portfolio extends Component {
                     <Grid>
                         <h2 className="text-center text-color__white">ВОЗВРАЩЕННЫЕ ДОЛГИ НАШИМ КЛИЕНТАМ</h2>
                         <Row className="block__content-part block-contact__content">
-                            <Portfolio__Slider content={this.state.content}/>
+                            { this.state.isLoad ? <Portfolio__Slider content={this.state.content}/> : null }
                         </Row>
                     </Grid>
                 </Grid>
