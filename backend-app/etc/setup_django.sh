@@ -26,6 +26,8 @@ python3 /backend/manage.py loaddata /backend/fixtures/common_Section.json
 python3 /backend/manage.py loaddata /backend/fixtures/common_Contact.json
 python3 /backend/manage.py loaddata /backend/fixtures/common_Portfolio.json
 
+python3 /backend/manage.py loaddata /backend/fixtures/modules_Notification.json
+
 # create admin user
 
 echo "from django.contrib.auth.models import User; 

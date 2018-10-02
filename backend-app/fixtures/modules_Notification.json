@@ -1,0 +1,22 @@
+[
+  {
+    "pk": 1,
+    "model": "notifications.smtpconfig",
+    "fields": {
+      "smtp_server": "smtp.server.ru:587",
+      "sender": "",
+      "password": ""
+    }
+  },
+  {
+    "pk": 1,
+    "model": "notifications.notificationmoduleconfig",
+    "fields": {
+      "system_description": "feedback",
+      "human_description": "Заявка с сайта",
+      "mail_template": "feedback.tmpl",
+      "recipients": "",
+      "smtp_config_id": 1
+    }
+  }
+]

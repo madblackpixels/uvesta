@@ -15,6 +15,8 @@ import re
 from apps.modules.notifications.mail import Sender
 
 
+# Page Serializer
+# -------------------------------------------------------------- >
 class SectionSerializer(CachedSerializerMixin):
     class Meta:
         model = Section
@@ -42,7 +44,7 @@ cache_registry.register(ContactsDataSerializer)
 cache_registry.register(PortfolioDataSerializer)
 
 
-# smth Serializers
+# POST-Requests Serializers
 # -------------------------------------------------------------- >
 class FeedbackCreateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -52,7 +54,7 @@ class FeedbackCreateSerializer(serializers.ModelSerializer):
     @staticmethod
     def create(validated_data):
         data = {
-            validated_data['text']: re.compile('[^><`]+'),
+            validated_data['text']: re.compile('[^`]+'),
             validated_data['name']: re.compile('[А-яA-z ]+'),
             validated_data['mail']: re.compile('([\w.%+-]+)@([\w-]+\.)+([\w]{2,})'),
             validated_data['phone']: re.compile('[+][7][ ][(][0-9]{3}[)][ ][0-9]{3}[ ][0-9]{2}[ ][0-9]{2}'),
@@ -66,8 +68,28 @@ class FeedbackCreateSerializer(serializers.ModelSerializer):
                     'error': 'Validation error!'
                 })
 
-        #try:
-        #Sender('test').send_mail()
-        #except: pass
+        # check checkbox status.
+        def checkbox_parser(_value):
+            if _value:
+                return '<span style="color:green">присутствует</span>'
+            else:
+                return '<span style="color:red">отсутствует</span>'
+
+        try:
+            Sender(
+                'feedback', {
+                    'NAME':  validated_data['name'],
+                    'MAIL':  validated_data['mail'],
+                    'PHONE': validated_data['phone'],
+                    'TEXT':  validated_data['text'],
+
+                    'RECEIPT':  checkbox_parser(validated_data['receipt']),
+                    'CONTRACT': checkbox_parser(validated_data['contract']),
+                    'DECISION': checkbox_parser(validated_data['decision']),
+                    'LIST':     checkbox_parser(validated_data['list']),
+                    'OTHER':    checkbox_parser(validated_data['other']),
+                    }
+                ).send_mail()
+        except: pass
 
         return Feedback.objects.create(**validated_data)

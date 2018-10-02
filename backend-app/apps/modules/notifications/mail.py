@@ -47,10 +47,10 @@ def get_smtp_config(_notify_type):
 
 # ->
 class Sender:
-    def __init__(self, _notify_type, **kwargs):
+    def __init__(self, _notify_type, params={}):
         self.mail_config = get_mail_config(_notify_type)
         self.smtp_config = get_smtp_config(_notify_type)
-        self.mail_data = kwargs
+        self.mail_data = params
 
     def set_mail_text(self):
         template_filepath = '{}/templates/{}'.format(

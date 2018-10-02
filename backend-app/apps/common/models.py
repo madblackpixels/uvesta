@@ -24,6 +24,8 @@ class Section(models.Model):
         return self.section
 
 
+# -------------------------------------------------------------- >
+# Block models
 class Contact(models.Model):
     class Meta:
         verbose_name = 'Раздел: Контакты'

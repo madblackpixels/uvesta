@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^contacts_data/$',  views.ContactsData.as_view()),
     url(r'^portfolio_data/$', views.PortfolioData.as_view()),
 
-
+    # Post-request
     url(r'^send_feedback/$', views.FeedbackCreate.as_view()),
 ]
 

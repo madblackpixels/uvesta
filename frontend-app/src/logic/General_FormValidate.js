@@ -1,10 +1,8 @@
 const pattern_letters_only = new RegExp(/^([А-яA-z ]+)$/i);
 const pattern_mail_check   = new RegExp(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-const pattern_text_check   = new RegExp(/^([^><`]+)$/i);
+const pattern_text_check   = new RegExp(/^([^`]+)$/i);
 const pattern_phone_check  = new RegExp(/^([+][7][ ][(][0-9]{3}[)][ ][0-9]{3}[ ][0-9]{2}[ ][0-9]{2})$/i);
 
-
-//RegExp(/^([+][7][ ][(][9][0-9]{2}[ ][0-9]{3}[ ][0-9]{2}[ ][0-9]{2})$/i);
 
 // validate simple Text
 export function validateInput__Text(input_text) {

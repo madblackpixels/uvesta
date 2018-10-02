@@ -20,6 +20,7 @@ export async function getSimpleData(api_link) {
 // Send Post request to backend, as input: api link and data to send.
 export function sendPOSTRequest(api_link, data) {
     try{
+
         const sourceFile = require('../common');
         fetch(sourceFile.hostname + api_link, {
             method: 'POST',
@@ -33,5 +34,4 @@ export function sendPOSTRequest(api_link, data) {
     } catch (e) {
         console.log(e)
     }
-
 }
