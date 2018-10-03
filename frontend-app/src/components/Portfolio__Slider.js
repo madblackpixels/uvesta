@@ -16,32 +16,32 @@ export default class Portfolio__Slider extends Component {
         this.state = {
             show: false,
             modal_content: "",
-            modal_title: "1",
+            modal_text:    "",
         };
     }
 
     handleHide() {
         this.setState({
             show: false,
-
         });
     };
 
-    fn = function(id, name) {
+    fn = function(id, name, text) {
         let cur_image = document.getElementById(id);
         let figure_style = window.getComputedStyle(cur_image.parentNode);
 
         if (figure_style.getPropertyValue('opacity') == 1) {
             this.setState({
                 show: true,
-                modal_title: name
+                modal_title: name,
+                modal_text:  text,
             });
         }
     };
 
 
     render() {
-
+        
         return(
             <div>
                 <Coverflow width="960" height="300"
@@ -59,7 +59,11 @@ export default class Portfolio__Slider extends Component {
                             src={item.image}
                             alt={item.name}
                             onClick={
-                                () => this.fn(item.id, item.name)
+                                () => this.fn(
+                                    item.id,
+                                    item.name,
+                                    item.text,
+                                )
                             }
                         />
                     ))}
@@ -78,8 +82,7 @@ export default class Portfolio__Slider extends Component {
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id
-                        ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.
+                        {this.state.modal_text}
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={this.handleHide}>Close</Button>

@@ -1,6 +1,9 @@
 # coding=utf-8
+from django.dispatch import receiver
 from django.db import models
+
 from datetime import date
+import os
 
 
 # -------------------------------------------------------------- >
@@ -69,8 +72,44 @@ class Portfolio(models.Model):
         verbose_name_plural = 'Раздел: Портфолио'
 
     name = models.CharField(max_length=150, blank=False)
+    text = models.TextField(blank=False)
     image = models.ImageField(upload_to='portfolio', default=False)
 
     def __str__(self):
         return self.name
 
+
+# -------------------------------------------------------------- >
+# Models hooks
+@receiver(models.signals.post_delete, sender=Portfolio)
+def auto_delete_file_on_delete(sender, instance, **kwargs):
+    """
+        Deletes images from filesystem.
+        when corresponding `ImageField` object is deleted.
+    """
+
+    if instance.image:
+        if os.path.isfile(instance.image.path):
+            os.remove(instance.image.path)
+
+
+@receiver(models.signals.pre_save, sender=Portfolio)
+def auto_delete_file_on_change(sender, instance, **kwargs):
+    """
+        Deletes old image from filesystem
+        when corresponding `ImageField` object is updated
+        with new file.
+    """
+
+    if not instance.pk:
+        return False
+
+    try:
+        old_file = sender.objects.get(pk=instance.pk).image
+    except sender.DoesNotExist:
+        return False
+
+    new_file = instance.image
+    if not old_file == new_file:
+        if os.path.isfile(old_file.path):
+            os.remove(old_file.path)

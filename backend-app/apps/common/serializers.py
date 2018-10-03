@@ -37,7 +37,7 @@ class ContactsDataSerializer(CachedSerializerMixin):
 class PortfolioDataSerializer(CachedSerializerMixin):
     class Meta:
         model = Portfolio
-        fields = ('id', 'name', 'image')
+        fields = ('id', 'name', 'image', 'text')
 
 
 cache_registry.register(ContactsDataSerializer)
