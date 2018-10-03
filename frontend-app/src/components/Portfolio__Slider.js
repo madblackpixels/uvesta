@@ -28,10 +28,15 @@ export default class Portfolio__Slider extends Component {
     };
 
     fn = function(id, name) {
-        this.setState({
-            show: true,
-            modal_title: name
-        });
+        let cur_image = document.getElementById(id);
+        let figure_style = window.getComputedStyle(cur_image.parentNode);
+
+        if (figure_style.getPropertyValue('opacity') == 1) {
+            this.setState({
+                show: true,
+                modal_title: name
+            });
+        }
     };
 
 
@@ -48,7 +53,15 @@ export default class Portfolio__Slider extends Component {
                 >
 
                     {this.props.content.map(item => (
-                        <img key={item.id} src={item.image} alt={item.name} onClick={() => this.fn(item.id, item.name)}/>
+                        <img
+                            id={item.id}
+                            key={item.id}
+                            src={item.image}
+                            alt={item.name}
+                            onClick={
+                                () => this.fn(item.id, item.name)
+                            }
+                        />
                     ))}
                 </Coverflow>
 
