@@ -1,10 +1,27 @@
+# coding=utf-8
+
 # models
-from .models import Section, Contact, Feedback, Portfolio, Team
+from .models import (
+    Portfolio,
+    Feedback,
+    Section,
+    Contact,
+    Team
+)
 
 # common
 from django.contrib import admin
+from django.contrib.admin import AdminSite
 
 
+# customize admin
+# -------------------------------------------------------- >
+admin.site.index_title = 'Административная панель'
+admin.site.site_header = 'ООО "ЮВЕСТА"'
+admin.site.site_title = 'ЮВЕСТА'
+
+# customize blocks
+# -------------------------------------------------------- >
 class SectionConfigs(admin.ModelAdmin):
     def has_add_permission(self, request):
         return False
@@ -33,7 +50,9 @@ class FeedbackConfig(admin.ModelAdmin):
     readonly_fields = ('name', 'phone', 'mail', 'system_date', 'text', 'receipt', 'contract', 'decision', 'list', 'other')
 
 
+# -------------------------------------------------------- >
 # registry admin
+
 admin.site.register(Section,  SectionConfigs)
 admin.site.register(Contact,  ContactConfigs)
 admin.site.register(Feedback, FeedbackConfig)

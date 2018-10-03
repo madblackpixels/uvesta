@@ -10,7 +10,7 @@ cache_registry.autodiscover()
 
 urlpatterns = [
     url(r'^api/', include('apps.common.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^uvesta_adm/', admin.site.urls),
 ]
 
 if settings.DEBUG:
