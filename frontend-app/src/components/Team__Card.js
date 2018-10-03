@@ -11,11 +11,11 @@ export default class Team__Card extends Component {
 
         return(
             <Col xs={12} sm={4} md={4} lg={4} className="text-center__small block-contact__address-list">
-                <Thumbnail src="/system/team/team.jpg">
+                <Thumbnail src={this.props.team_item.image}>
                     <h3 className="text-color__blood-red">
-                        Thumbnail label
+                        {this.props.team_item.name}
                     </h3>
-                    <p>Description</p>
+                    <p>{this.props.team_item.text}</p>
                 </Thumbnail>
             </Col>
         )

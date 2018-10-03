@@ -5,10 +5,25 @@ import {Grid, Row} from 'react-bootstrap'
 
 // components
 import Team__Card  from '../../components/Team__Card'
+import {getSimpleData} from "../../logic/General_ApiReq";
 
 
 // code
 export default class Main_Team extends Component {
+
+    state = {
+        content: [],
+    };
+
+    updateContent() {
+        getSimpleData("/team_data").then(result => this.setState({
+            content: result
+        }))
+    };
+
+    componentWillMount() {
+        this.updateContent()
+    };
 
     render() {
 
@@ -26,9 +41,9 @@ export default class Main_Team extends Component {
                         </h2>
                         <Row className="block__content-part block-team__content">
 
-                            <Team__Card />
-                            <Team__Card />
-                            <Team__Card />
+                            {this.state.content.map(item => (
+                                <Team__Card team_item={item}/>
+                            ))}
 
                         </Row>
                     </Grid>

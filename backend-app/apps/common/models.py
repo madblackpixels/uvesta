@@ -73,7 +73,22 @@ class Portfolio(models.Model):
 
     name = models.CharField(max_length=150, blank=False)
     text = models.TextField(blank=False)
-    image = models.ImageField(upload_to='portfolio', default=False)
+    show = models.BooleanField()
+    image = models.ImageField(upload_to='portfolio', blank=False)
+
+    def __str__(self):
+        return self.name
+
+
+class Team(models.Model):
+    class Meta:
+        verbose_name = 'Раздел: Команда'
+        verbose_name_plural = 'Раздел: Команда'
+
+    name = models.CharField(max_length=150, blank=False)
+    text = models.TextField(blank=False)
+    show = models.BooleanField()
+    image = models.ImageField(upload_to='team', blank=False)
 
     def __str__(self):
         return self.name
@@ -81,6 +96,7 @@ class Portfolio(models.Model):
 
 # -------------------------------------------------------------- >
 # Models hooks
+@receiver(models.signals.post_delete, sender=Team)
 @receiver(models.signals.post_delete, sender=Portfolio)
 def auto_delete_file_on_delete(sender, instance, **kwargs):
     """
@@ -93,6 +109,7 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
             os.remove(instance.image.path)
 
 
+@receiver(models.signals.post_delete, sender=Team)
 @receiver(models.signals.pre_save, sender=Portfolio)
 def auto_delete_file_on_change(sender, instance, **kwargs):
     """

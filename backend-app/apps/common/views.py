@@ -1,5 +1,5 @@
-from apps.common.models import Section, Contact, Feedback, Portfolio
-from apps.common.serializers import SectionSerializer, ContactsDataSerializer, FeedbackCreateSerializer, PortfolioDataSerializer
+from apps.common.models import Section, Contact, Feedback, Portfolio, Team
+from apps.common.serializers import SectionSerializer, ContactsDataSerializer, FeedbackCreateSerializer, PortfolioDataSerializer, TeamDataSerializer
 
 # Permissions
 from rest_framework.permissions import AllowAny
@@ -25,7 +25,12 @@ class ContactsData(ListAPIView):
 
 class PortfolioData(ListAPIView):
     serializer_class = PortfolioDataSerializer
-    queryset = Portfolio.objects.all()
+    queryset = Portfolio.objects.filter(show=True)[:15]
+
+
+class TeamData(ListAPIView):
+    serializer_class = TeamDataSerializer
+    queryset = Team.objects.filter(show=True)[:9]
 
 
 # Forms

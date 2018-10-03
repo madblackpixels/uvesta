@@ -6,7 +6,7 @@ from rest_framework_cache.serializers import CachedSerializerMixin
 from rest_framework_cache.registry import cache_registry
 
 # Models
-from apps.common.models import Section, Contact, Feedback, Portfolio
+from apps.common.models import Section, Contact, Feedback, Portfolio, Team
 
 # Other
 import re
@@ -40,8 +40,15 @@ class PortfolioDataSerializer(CachedSerializerMixin):
         fields = ('id', 'name', 'image', 'text')
 
 
+class TeamDataSerializer(CachedSerializerMixin):
+    class Meta:
+        model = Team
+        fields = ('id', 'name', 'image', 'text')
+
+
 cache_registry.register(ContactsDataSerializer)
 cache_registry.register(PortfolioDataSerializer)
+cache_registry.register(TeamDataSerializer)
 
 
 # POST-Requests Serializers
