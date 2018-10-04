@@ -42,7 +42,7 @@ export default class Main_Team extends Component {
                         <Row className="block__content-part block-team__content">
 
                             {this.state.content.map(item => (
-                                <Team__Card team_item={item}/>
+                                <Team__Card key={item.id} team_item={item} />
                             ))}
 
                         </Row>
