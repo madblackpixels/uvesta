@@ -117,6 +117,15 @@ li:before {
 
 
 
+
+.intro_img{
+    width: 180%;
+    z-index: -1;
+    position: absolute;
+    right: 5%;
+}
+
+
 /* - > ----------   Block header  ---------- < - */
 .block__header{
     padding-top:36px;

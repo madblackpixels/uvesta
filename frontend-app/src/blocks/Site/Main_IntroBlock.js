@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // bootstrap
-import { Grid, Row, Col, Glyphicon } from 'react-bootstrap'
+import { Grid, Row, Col, Glyphicon, Image } from 'react-bootstrap'
 
 
 
@@ -66,6 +66,9 @@ export default class Main_IntroBlock extends Component {
                                     </span>
                                 </li>
                             </ul>
+                        </Col>
+                        <Col xs={12} sm={12} md={6} lg={4}>
+                            <Image src="http://127.0.0.1:8000/media/system/intro.png" className="intro_img"/>
                         </Col>
                     </Row>
                 </Grid>
