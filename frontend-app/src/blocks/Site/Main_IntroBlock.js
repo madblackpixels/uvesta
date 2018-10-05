@@ -37,9 +37,9 @@ export default class Main_IntroBlock extends Component {
     render() {
 
         return(
-            <Grid fluid={true} className="no-padding">
+            <Grid fluid={true} className="no-padding block-intro_wall">
                 <Grid>
-                    <Row className="block__content-part block-intro_wall">
+                    <Row className="block__content-part">
                         <Col xs={12} sm={12} md={6} lg={8}>
                             <h1 className="text-color__bright-red">
                                 {this.props.title}

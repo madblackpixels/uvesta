@@ -27,7 +27,7 @@ export default class Header extends Component {
 
     render() {
         return(
-            <Grid fluid={true} className="block__header no-padding">
+            <Grid fluid={true} className="block__header">
                 <Grid>
                     <Row>
 

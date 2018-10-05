@@ -10,7 +10,7 @@ export default class Contacts__Address extends Component {
     render() {
 
         return(
-            <Col xs={12} sm={4} md={4} lg={4} className="text-center__small block-contact__address-list">
+            <Col xs={12} sm={4} md={4} lg={4} className="block-contact__address-list">
                 <ul>
                     <li>
                         <Glyphicon glyph="earphone" className="text-color__bright-red glyphicon__margin"/>

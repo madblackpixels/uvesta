@@ -39,10 +39,10 @@ export default class Main_Portfolio extends Component {
                     <div id="triangle-top-left__white__bold"></div>
                 </Row>
 
-                <Grid fluid={true} className="no-padding  ">
+                <Grid fluid={true} className="no-padding">
                     <Grid>
                         <h2 className="text-center text-color__white">{this.props.title}</h2>
-                        <Row className="block__content-part block-contact__content">
+                        <Row className="block__content-part no-magrin no-padding">
                             { this.state.isLoad ? <Portfolio__Slider content={this.state.content}/> : null }
                         </Row>
                     </Grid>

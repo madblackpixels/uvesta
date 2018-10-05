@@ -31,8 +31,8 @@ export default class Main_Team extends Component {
 
             <Grid fluid={true} className="no-padding">
                 <Grid className="text-center">
-                    <h2 className="text-center text-color__blood-red">
-                        наша команда
+                    <h2 className="text-center text-color__blood-red margin__sm">
+                        {this.props.title}
                     </h2>
                     <Row className="block__team-part">
 
