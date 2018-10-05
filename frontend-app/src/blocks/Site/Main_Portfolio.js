@@ -34,19 +34,23 @@ export default class Main_Portfolio extends Component {
 
         return(
 
-            <Grid fluid={true} className="no-padding">
-                <Row className="no-padding no-magrin background-color__bright-red">
+            <Grid fluid={true} className="no-padding block__portfolio_wall">
+                <Row className="no-padding no-magrin ">
                     <div id="triangle-top-left__white__bold"></div>
                 </Row>
 
-                <Grid fluid={true} className="no-padding background-color__bright-red">
+                <Grid fluid={true} className="no-padding  ">
                     <Grid>
-                        <h2 className="text-center text-color__white">ВОЗВРАЩЕННЫЕ ДОЛГИ НАШИМ КЛИЕНТАМ</h2>
+                        <h2 className="text-center text-color__white">{this.props.title}</h2>
                         <Row className="block__content-part block-contact__content">
                             { this.state.isLoad ? <Portfolio__Slider content={this.state.content}/> : null }
                         </Row>
                     </Grid>
                 </Grid>
+
+                <Row className="no-padding no-magrin ">
+                    <div id="triangle-top-right__white"></div>
+                </Row>
             </Grid>
         )
     }

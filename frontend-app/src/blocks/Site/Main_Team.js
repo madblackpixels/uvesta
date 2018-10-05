@@ -30,23 +30,17 @@ export default class Main_Team extends Component {
         return(
 
             <Grid fluid={true} className="no-padding">
-                <Row className="no-padding no-magrin background-color__bright-red">
-                    <div id="triangle-top-left"></div>
-                </Row>
+                <Grid className="text-center">
+                    <h2 className="text-center text-color__blood-red">
+                        наша команда
+                    </h2>
+                    <Row className="block__team-part">
 
-                <Grid fluid={true} className="no-padding">
-                    <Grid className="text-center">
-                        <h2 className="text-center text-color__blood-red">
-                            наша команда
-                        </h2>
-                        <Row className="block__content-part block-team__content">
+                         {this.state.content.map(item => (
+                             <Team__Card key={item.id} team_item={item} />
+                         ))}
 
-                            {this.state.content.map(item => (
-                                <Team__Card key={item.id} team_item={item} />
-                            ))}
-
-                        </Row>
-                    </Grid>
+                    </Row>
                 </Grid>
 
             </Grid>

@@ -14,6 +14,7 @@ h2{
     font-weight: 700;
     line-height: 36px;
     text-transform: uppercase;
+    padding-top: 24px;
 }
 h3{
     font-weight: 700;
@@ -32,6 +33,12 @@ li {
 li:before {
   content: "";
   padding-right: 5px;
+}
+@media (max-width: 767px) {
+    h2{
+        padding-top: 12px;
+        font-size: 24px;
+    }
 }
 
 
@@ -85,9 +92,36 @@ li:before {
     border-color: #61221d;
 }
 .thumbnail{
+    border: none;
     border-radius: 0;
+    box-shadow: none;
+    padding: 0;
 }
+.thumbnail img{
+    -webkit-box-shadow: 10px 10px 51px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 51px -1px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 51px -1px rgba(0,0,0,0.75);
 
+}
+@media (max-width: 767px) {
+    .text-center__small{
+        text-align: center;
+    }
+    .block__content-part{
+        padding-top: 22px;
+    }
+    .block__margin_small{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .check_box__small{
+        padding-bottom: 12px;
+    }
+    .thumbnail__small{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
 
 
 
@@ -125,6 +159,10 @@ li:before {
     right: 5%;
 }
 
+/* - > ----------   Block team  ---------- < - */
+.block__team-part{
+    padding-bottom: 0;
+}
 
 /* - > ----------   Block header  ---------- < - */
 .block__header{
@@ -168,6 +206,30 @@ li:before {
 }
 
 /* - > ----------   Block feedback  ---------- < - */
+
+
+
+
+.block-intro_wall{
+    background: #fff url("http://127.0.0.1:8000/media/system/intro_wall1.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+/* - > ----------   Block portfolio  ---------- < - */
+.block__portfolio_wall{
+    opacity: 0.8;
+    background: #e32926 url("http://127.0.0.1:8000/media/system/portfolio_wall.jpg") no-repeat center center;
+    background-blend-mode: soft-light;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .coverflow__container__1P-xE{
     background: none!important;
 }
@@ -178,7 +240,58 @@ li:before {
     box-shadow: none!important;
     border: 16px solid #fff;
 }
+.brand-logo__header__sm{
+    display: none;
+}
+@media (max-width: 1999px) {
+    .coverflow__figure__3bk_C{
+        width: 230px!important;
+    }
+    .coverflow__container__1P-xE{
+        height: 240px!important;
+    }
+}
+@media (max-width: 991px) {
+    .md__hide{
+        display: none;
+    }
+    .md__line{
+        line-height: 60px;
+    }
+}
+@media (max-width: 768px) {
+    .coverflow__figure__3bk_C{
+        border: 0;
+        width: 180px!important;
+    }
+    .coverflow__container__1P-xE{
+        height: 220px!important;
+        margin-top: -36px!important;
+    }
+    .brand-logo__header{
+       display: none;
+    }
+    .brand-logo__header__sm{
+        display: inherit;
+        width: 84px;
+    }
+}
 
+@media (max-width: 500px) {
+    .coverflow__figure__3bk_C{
+        width: 120px!important;
+    }
+    .md__line{
+        font-size: 16px;
+        line-height: 50px;
+    }
+    .brand-logo__header__sm{
+        width: 64px;
+    }
+    .coverflow__container__1P-xE{
+        height: 200px!important;
+    }
+}
 
 
 /* - > ----------   Block contacts  ---------- < - */
@@ -188,13 +301,13 @@ li:before {
     padding-right: 0;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
     .block-contact__address-list{
         padding-top: 5%;
         padding-bottom: 0;
     }
 }
-@media (max-width: 766px) {
+@media (max-width: 768px) {
     .block-contact__content{
         padding-bottom: 0!important;
     }
@@ -334,11 +447,7 @@ li:before {
 }
 
 
-@media (max-width: 766px) {
-    .text-center__small{
-        text-align: center;
-    }
-}
+
 
 
 .coverflow__stage__14oqC{

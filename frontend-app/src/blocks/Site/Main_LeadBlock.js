@@ -52,6 +52,9 @@ export default class Main_LeadBlock extends Component {
 
         return(
             <Grid fluid={true} className="background-color__blood-red no-padding">
+                <Row className="no-padding no-magrin background-color__bright-red">
+                   <div id="triangle-bottomright__bold-blood"></div>
+                </Row>
 
                 <Grid className="block__lead">
                     <Row>
@@ -87,6 +90,10 @@ export default class Main_LeadBlock extends Component {
                         </Col>
                     </Row>
                 </Grid>
+
+                <Row className="no-padding no-magrin background-color__bright-red">
+                    <div id="triangle-top-left"></div>
+                </Row>
 
             </Grid>
         )

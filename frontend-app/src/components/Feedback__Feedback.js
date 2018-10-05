@@ -146,7 +146,7 @@ export default class Feedback__Feedback extends Component {
                 <Row>
 
 
-                    <Col xs={12} sm={4} md={4} lg={4} className="">
+                    <Col xs={12} sm={4} md={4} lg={4} className="check_box__small">
                         <p className="text-color__gray">
                             <span className="text-bold">
                                 Отметьте документы подтверждающие долг

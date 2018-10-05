@@ -6,7 +6,15 @@ from rest_framework_cache.serializers import CachedSerializerMixin
 from rest_framework_cache.registry import cache_registry
 
 # Models
-from apps.common.models import Section, Contact, Feedback, Portfolio, Team
+from apps.common.models import (
+    Portfolio,
+    Feedback,
+    Section,
+    Contact,
+    IntroUl,
+    Intro,
+    Team,
+)
 
 # Other
 import re
@@ -31,7 +39,7 @@ cache_registry.register(SectionSerializer)
 class ContactsDataSerializer(CachedSerializerMixin):
     class Meta:
         model = Contact
-        fields = ('phone', 'address', 'latitude', 'longitude')
+        fields = ('phone', 'address', 'latitude', 'longitude', 'subtitle')
 
 
 class PortfolioDataSerializer(CachedSerializerMixin):
@@ -46,8 +54,21 @@ class TeamDataSerializer(CachedSerializerMixin):
         fields = ('id', 'name', 'image', 'text')
 
 
+class IntroDataSerializer(CachedSerializerMixin):
+    class Meta:
+        model = Intro
+        fields = ('title', 'subtitle')
+
+
+class IntroUlDataSerializer(CachedSerializerMixin):
+    class Meta:
+        model = IntroUl
+        fields = ('id', 'text')
+
+
 cache_registry.register(ContactsDataSerializer)
 cache_registry.register(PortfolioDataSerializer)
+cache_registry.register(IntroDataSerializer)
 cache_registry.register(TeamDataSerializer)
 
 

@@ -15,21 +15,13 @@ export default class Main_Feedback extends Component {
         return(
 
             <Grid fluid={true} className="no-padding">
-                <Row className="no-padding no-magrin background-color__bright-red">
-                    <div id="triangle-top-right__white"></div>
-                </Row>
-
-                <Grid fluid={true} className="no-padding">
-                    <Grid>
-                        <h2 className="text-center text-color__blood-red">
-                            получить бесплатный анализ ситуации
-                        </h2>
-                        <Row className="block__content-part">
-
-                            <Feedback__Feedback addNotification={this.props.addNotification}/>
-
-                        </Row>
-                    </Grid>
+                <Grid>
+                    <h2 className="text-center text-color__blood-red">
+                        {this.props.title}
+                    </h2>
+                    <Row className="block__content-part block__margin_small">
+                        <Feedback__Feedback addNotification={this.props.addNotification}/>
+                    </Row>
                 </Grid>
             </Grid>
         )

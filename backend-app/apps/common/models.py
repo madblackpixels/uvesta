@@ -36,6 +36,7 @@ class Contact(models.Model):
 
     phone = models.CharField(max_length=150,    blank=False)
     address = models.CharField(max_length=200,  blank=False)
+    subtitle = models.CharField(max_length=200,  blank=False)
     latitude = models.CharField(max_length=30,  blank=False)
     longitude = models.CharField(max_length=30, blank=False)
 
@@ -92,6 +93,29 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Intro(models.Model):
+    class Meta:
+        verbose_name = 'Раздел: Интро-заголовки'
+        verbose_name_plural = 'Раздел: Интро-заголовки'
+
+    title = models.CharField(max_length=150, blank=False)
+    subtitle = models.CharField(max_length=150, blank=False)
+
+    def __str__(self):
+        return self.title
+
+
+class IntroUl(models.Model):
+    class Meta:
+        verbose_name = 'Раздел: Интро-описание'
+        verbose_name_plural = 'Раздел: Интро-описание'
+
+    text = models.TextField(blank=False)
+
+    def __str__(self):
+        return self.text
 
 
 # -------------------------------------------------------------- >

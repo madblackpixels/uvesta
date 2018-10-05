@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "pk": 1,
+    "model": "common.portfolio",
+    "fields": {
+      "name": "История 1",
+      "text": "описание истории 1",
+      "show": true,
+      "image": "portfolio/portfolio1.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "common.portfolio",
+    "fields": {
+      "name": "История 2",
+      "text": "описание истории 2",
+      "show": true,
+      "image": "portfolio/portfolio2.jpg"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "common.portfolio",
+    "fields": {
+      "name": "История 3",
+      "text": "описание истории 3",
+      "show": true,
+      "image": "portfolio/portfolio3.jpg"
+    }
+  }
+]

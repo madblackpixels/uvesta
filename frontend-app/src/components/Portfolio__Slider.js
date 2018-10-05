@@ -46,7 +46,6 @@ export default class Portfolio__Slider extends Component {
             <div>
                 <Coverflow width="960" height="300"
                     displayQuantityOfSide={2}
-                    navigation={true}
                     enableScroll={false}
                     clickable={true}
                     active={0}
