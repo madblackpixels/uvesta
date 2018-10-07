@@ -6,15 +6,18 @@ from apps.common.models import (
     Intro,
     Section,
     Team,
+    Lead
 )
 
 from apps.common.serializers import (
     FeedbackCreateSerializer,
     PortfolioDataSerializer,
     ContactsDataSerializer,
+    LeadCreateSerializer,
     IntroDataSerializer,
     IntroUlDataSerializer,
     TeamDataSerializer,
+    LeadDataSerializer,
     SectionSerializer,
 )
 
@@ -60,8 +63,19 @@ class IntroDataUl(ListAPIView):
     queryset = IntroUl.objects.all()
 
 
+class LeadData(ListAPIView):
+    serializer_class = LeadDataSerializer
+    queryset = Lead.objects.all()
+
+
 # Forms
 # -------------------------------------------------------------- >
 class FeedbackCreate(CreateAPIView):
     serializer_class = FeedbackCreateSerializer
     permission_classes = (AllowAny, )
+
+
+class LeadCreate(CreateAPIView):
+    serializer_class = LeadCreateSerializer
+    permission_classes = (AllowAny, )
+

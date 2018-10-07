@@ -47,7 +47,7 @@ export default class MainPage extends Component {
 
                 {this.state.sections.map(item => {
                     if (item.section === 'Генератор лидов' && item.status === 'on') {
-                        return <Main_LeadBlock key={item.id} title={item.title} />
+                        return <Main_LeadBlock key={item.id} title={item.title} addNotification={this.props.addNotification} />
                     }
                 })}
 

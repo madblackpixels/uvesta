@@ -9,11 +9,13 @@ from rest_framework_cache.registry import cache_registry
 from apps.common.models import (
     Portfolio,
     Feedback,
+    LeadForm,
     Section,
     Contact,
     IntroUl,
     Intro,
     Team,
+    Lead,
 )
 
 # Other
@@ -66,10 +68,17 @@ class IntroUlDataSerializer(CachedSerializerMixin):
         fields = ('id', 'text')
 
 
+class LeadDataSerializer(CachedSerializerMixin):
+    class Meta:
+        model = Lead
+        fields = ('id', 'text')
+
+
 cache_registry.register(ContactsDataSerializer)
 cache_registry.register(PortfolioDataSerializer)
 cache_registry.register(IntroDataSerializer)
 cache_registry.register(TeamDataSerializer)
+cache_registry.register(LeadDataSerializer)
 
 
 # POST-Requests Serializers
@@ -121,3 +130,35 @@ class FeedbackCreateSerializer(serializers.ModelSerializer):
         except: pass
 
         return Feedback.objects.create(**validated_data)
+
+
+class LeadCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Feedback
+        fields = ('name', 'mail')
+
+    @staticmethod
+    def create(validated_data):
+        data = {
+            validated_data['name']: re.compile('[А-яA-z ]+'),
+            validated_data['mail']: re.compile('([\w.%+-]+)@([\w-]+\.)+([\w]{2,})'),
+        }
+
+        for key, val in data.items():
+            if val.match(key):
+                continue
+            else:
+                raise serializers.ValidationError({
+                    'error': 'Validation error!'
+                })
+
+        #try:
+        Sender(
+            'lead', {
+                'NAME':  validated_data['name'],
+                'MAIL':  validated_data['mail'],
+                }
+            ).send_mail()
+        #except: pass
+
+        return LeadForm.objects.create(**validated_data)

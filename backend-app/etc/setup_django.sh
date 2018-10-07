@@ -28,6 +28,7 @@ python3 /backend/manage.py loaddata /backend/fixtures/common_Team.json
 python3 /backend/manage.py loaddata /backend/fixtures/common_Portfolio.json
 python3 /backend/manage.py loaddata /backend/fixtures/common_IntroUl.json
 python3 /backend/manage.py loaddata /backend/fixtures/common_Intro.json
+python3 /backend/manage.py loaddata /backend/fixtures/common_Lead.json
 
 python3 /backend/manage.py loaddata /backend/fixtures/modules_Notification.json
 

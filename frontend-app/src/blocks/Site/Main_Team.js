@@ -29,12 +29,12 @@ export default class Main_Team extends Component {
 
         return(
 
-            <Grid fluid={true} className="no-padding">
-                <Grid className="text-center">
+            <Grid fluid={true}>
+                <Grid className="block-team block-content">
                     <h2 className="text-center text-color__blood-red margin__sm">
                         {this.props.title}
                     </h2>
-                    <Row className="block__team-part">
+                    <Row className="block-team__content">
 
                          {this.state.content.map(item => (
                              <Team__Card key={item.id} team_item={item} />
@@ -42,7 +42,6 @@ export default class Main_Team extends Component {
 
                     </Row>
                 </Grid>
-
             </Grid>
         )
     }

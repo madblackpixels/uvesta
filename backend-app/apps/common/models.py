@@ -67,6 +67,21 @@ class Feedback(models.Model):
         return self.name
 
 
+class LeadForm(models.Model):
+    class Meta:
+        verbose_name = 'Раздел: Лиды-заявки'
+        verbose_name_plural = 'Раздел: Лиды-заявки'
+
+    name = models.CharField(max_length=150, blank=False)
+    mail = models.CharField(max_length=50,  blank=False)
+
+    # system fields
+    system_date = models.DateField(default=date.today, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
 class Portfolio(models.Model):
     class Meta:
         verbose_name = 'Раздел: Портфолио'
@@ -111,6 +126,17 @@ class IntroUl(models.Model):
     class Meta:
         verbose_name = 'Раздел: Интро-описание'
         verbose_name_plural = 'Раздел: Интро-описание'
+
+    text = models.TextField(blank=False)
+
+    def __str__(self):
+        return self.text
+
+
+class Lead(models.Model):
+    class Meta:
+        verbose_name = 'Раздел: Лиды-описание'
+        verbose_name_plural = 'Раздел: Лиды-описание'
 
     text = models.TextField(blank=False)
 

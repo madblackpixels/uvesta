@@ -10,9 +10,9 @@ export default class Team__Card extends Component {
     render() {
 
         return(
-            <Col xs={12} sm={4} md={4} lg={4} className="text-center__small block-contact__address-list">
-                <div className="thumbnail__small">
-                    <Thumbnail src={this.props.team_item.image}>
+            <Col xs={12} sm={4} md={4} lg={4}>
+                <div>
+                    <Thumbnail src={this.props.team_item.image} className="thumbnail__sm">
                         <h4 className="text-color__blood-red">
                             {this.props.team_item.name}
                         </h4>

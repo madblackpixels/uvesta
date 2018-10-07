@@ -13,9 +13,11 @@ urlpatterns = [
     url(r'^intro_data_ul/$',   views.IntroDataUl.as_view()),
     url(r'^intro_data/$',      views.IntroData.as_view()),
     url(r'^team_data/$',       views.TeamData.as_view()),
+    url(r'^lead_data/$',       views.LeadData.as_view()),
 
     # Post-request
     url(r'^send_feedback/$', views.FeedbackCreate.as_view()),
+    url(r'^send_lead/$',     views.LeadCreate.as_view()),
 ]
 
 

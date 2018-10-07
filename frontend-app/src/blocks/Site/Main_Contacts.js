@@ -33,25 +33,21 @@ export default class Main_Contacts extends Component {
 
         return(
 
-            <Grid fluid={true} className="no-padding">
-                <Row className="no-padding no-magrin background-color__gray">
-                    <div id="triangle-top-left__white"></div>
-                </Row>
-
-                <Grid fluid={true} className="no-padding background-color__gray">
-                    <Grid>
-                        <h2 className="text-center text-color__blood-red">
-                            {this.props.title}
-                        </h2>
-                        <Row className="block__content-part block-contact__content">
-
-                            <Contacts__Address content={this.state.content} />
-                            <Contacts__Map content={this.state.content} />
-
-                        </Row>
-                    </Grid>
+            <Grid fluid={true} className="background-color__gray">
+                <Grid fluid={true} className="no-padding" className="">
+                    <div id="block-contacts__triangle"></div>
                 </Grid>
+                <Grid className="block-contact">
+                    <h2 className="text-center text-color__blood-red">
+                        {this.props.title}
+                    </h2>
+                    <Row className="block-contact__content">
 
+                        <Contacts__Address content={this.state.content} />
+                        <Contacts__Map content={this.state.content} />
+
+                    </Row>
+                </Grid>
             </Grid>
         )
     }

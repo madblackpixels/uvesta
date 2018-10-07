@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Coverflow from 'react-coverflow'
 
 // bootstrap
-import { Modal, Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 
 
 // code
@@ -68,24 +68,17 @@ export default class Portfolio__Slider extends Component {
                     ))}
                 </Coverflow>
 
-                <Modal
-                    show={this.state.show}
-                    onHide={this.handleHide}
-                    container={this}
-                    aria-labelledby="contained-modal-title"
-                >
-
+                <Modal show={this.state.show} onHide={this.handleHide}>
                     <Modal.Header closeButton>
-                        <Modal.Title id="contained-modal-title">
+                        <Modal.Title>
                             {this.state.modal_title}
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        {this.state.modal_text}
+                        <p>
+                            {this.state.modal_text}
+                        </p>
                     </Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={this.handleHide}>Close</Button>
-                    </Modal.Footer>
                 </Modal>
             </div>
         )

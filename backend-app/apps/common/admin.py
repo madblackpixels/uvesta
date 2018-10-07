@@ -3,11 +3,13 @@
 # models
 from .models import (
     Portfolio,
+    LeadForm,
     Feedback,
     Section,
     Contact,
     Intro,
-    Team
+    Team,
+    Lead
 )
 
 # common
@@ -61,13 +63,27 @@ class IntroConfig(admin.ModelAdmin):
         return False
 
 
+class LeadFormConfig(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    readonly_fields = (
+        'name', 'mail', 'system_date'
+    )
+
+
 # -------------------------------------------------------- >
 # registry admin
 
 admin.site.register(Section,  SectionConfigs)
 admin.site.register(Contact,  ContactConfigs)
 admin.site.register(Feedback, FeedbackConfig)
+admin.site.register(LeadForm, LeadFormConfig)
 admin.site.register(Intro,    IntroConfig)
 admin.site.register(Portfolio)
 admin.site.register(Team)
+admin.site.register(Lead)
 

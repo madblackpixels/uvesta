@@ -46,7 +46,7 @@ export default class App extends Component {
             container: "top-right",
             animationIn: ["animated", "fadeIn"],
             animationOut: ["animated", "fadeOut"],
-            dismiss: { duration: 2500 },
+            dismiss: { duration: 5000 },
             dismissable: { click: true }
         });
     }

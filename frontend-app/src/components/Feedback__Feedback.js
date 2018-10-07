@@ -115,16 +115,14 @@ export default class Feedback__Feedback extends Component {
             other:    this.state.otherIsChecked,
         };
 
-        console.log(data);
-
         sendPOSTRequest('/send_feedback/', data);
         this.clearForm();
 
         // send notify
         this.props.addNotification(
             'info',
-            "qwerty",
-            "qwerty",
+            "Спасибо!",
+            "Мы с Вами обязательно свяжемся.",
         );
     };
 
@@ -132,7 +130,6 @@ export default class Feedback__Feedback extends Component {
     render() {
 
         const { leadName, leadMail, leadText, leadPhone } = this.state;
-        console.log(leadName);
         this.isEnabled =
             validateInput__Text(leadName) &&
             validateInput__Mail(leadMail) &&
@@ -143,10 +140,10 @@ export default class Feedback__Feedback extends Component {
         return(
 
             <form onSubmit={this.handleSubmit.bind(this)}>
-                <Row>
+                <Row className="block-feedback__row">
 
 
-                    <Col xs={12} sm={4} md={4} lg={4} className="check_box__small">
+                    <Col xs={12} sm={4} md={4} lg={4} className="check_box__small block-feedback__col">
                         <p className="text-color__gray">
                             <span className="text-bold">
                                 Отметьте документы подтверждающие долг
@@ -194,7 +191,7 @@ export default class Feedback__Feedback extends Component {
 
 
                 </Row>
-                <Row>
+                <Row className="block-feedback__row">
 
 
                     <Col xs={12} sm={4} md={4} lg={4} className="">
@@ -204,6 +201,7 @@ export default class Feedback__Feedback extends Component {
                                 onChange={this.update_leadName}
                                 type="text"
                                 placeholder="Имя"
+                                autoComplete="off"
                             />
                         </FormGroup>
                     </Col>
@@ -231,13 +229,14 @@ export default class Feedback__Feedback extends Component {
                                 onChange={this.update_leadMail}
                                 type="text"
                                 placeholder="Email"
+                                autoComplete="off"
                             />
                         </FormGroup>
                     </Col>
 
 
                 </Row>
-                <Row className="text-center">
+                <Row className="text-center block-feedback__button">
                     <Button type="submit" disabled={!this.isEnabled}>Получить бесплатный анализ ситуации</Button>
                 </Row>
             </form>
