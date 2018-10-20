@@ -323,7 +323,7 @@
 @media (max-width: 767px) {
     .free_btn_pos{
         text-align: left;
-        padding-right: 4%;
+        padding-left: 4%;
     }
 }
 
@@ -536,7 +536,7 @@ li:before {
 .container-fluid{
     padding-right: 0;
     padding-left: 0;
-    max-width: 1680px;
+    max-width: 1920px;
 }
 .text-right{
     text-align: right;
