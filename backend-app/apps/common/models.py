@@ -115,7 +115,7 @@ class Intro(models.Model):
         verbose_name = 'Раздел: Интро-заголовки'
         verbose_name_plural = 'Раздел: Интро-заголовки'
 
-    title = models.CharField(max_length=150, blank=False)
+    title = models.TextField(blank=False)
     subtitle = models.CharField(max_length=150, blank=False)
 
     def __str__(self):

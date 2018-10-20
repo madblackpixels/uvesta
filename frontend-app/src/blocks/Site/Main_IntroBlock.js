@@ -37,18 +37,22 @@ export default class Main_IntroBlock extends Component {
 
         return(
             <Grid fluid={true}>
-                <Grid className="block-intro" style={{ backgroundImage: "url(system/intro_wall.png)"}} >
-                    <Grid>
+                <Grid className="block-intro">
+                    <Grid style={{ position: "relative" }}>
                         <Row>
                             <Col xs={12} sm={12} md={8} lg={10}>
                                 <h1 className="text-color__bright-red">
                                     {this.props.title}
                                 </h1>
-                                <h2 className="text-color__blood-red sm_crutch">
-                                    {this.state.content.title}
-                                </h2>
                             </Col>
-                            <Col xs={12} sm={12} md={8} lg={8}>
+                            <Col xs={12} sm={8} md={9} lg={10} className="intro_subtitle__sm">
+                                <h2 className="text-color__blood-red sm_crutch"
+                                    dangerouslySetInnerHTML={{__html: this.state.content.title_block}}
+                                />
+                            </Col>
+                            <Image className="intro_wall" src="system/intro_wall.png" responsive/>
+                            <Image className="intro_wall__sm" src="system/small.png"  responsive/>
+                            <Col xs={8} sm={8} md={8} lg={8} className="intro_ul__sm">
                                 <h3 className="text-color__bright-red">
                                     {this.state.content.subtitle}
                                 </h3>

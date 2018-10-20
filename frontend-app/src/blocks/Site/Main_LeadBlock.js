@@ -89,10 +89,8 @@ export default class Main_LeadBlock extends Component {
                     <Grid className="block-content">
                         <Row>
                             <Col xs={12} sm={6} md={6} lg={6}>
-                                <p className="text-color__bright-red block__lead-call-action">
-                                    <b>
-                                        {this.props.title}
-                                    </b>
+                                <p className="text-color__white block__lead-call-action">
+                                    <b dangerouslySetInnerHTML={{__html: this.props.title}}/>
                                 </p>
                             </Col>
                             <Col xs={12} sm={6} md={6} lg={6} className="text-color__white">
@@ -128,9 +126,7 @@ export default class Main_LeadBlock extends Component {
                                     {this.state.content.map(item => (
                                         <li key={item.id}>
                                             <Glyphicon glyph="ok" className="text-color__white"/>
-                                            <span className="text-color__white">
-                                                {item.text}
-                                            </span>
+                                            <span className="text-color__white" dangerouslySetInnerHTML={{__html: item.text_field}}/>
                                         </li>
                                     ))}
                                 </ul>
@@ -138,6 +134,11 @@ export default class Main_LeadBlock extends Component {
                             <Col xs={12} sm={6} md={4} lg={4} className="text-color__white lead_btn_pos">
                                 <Button className="lead_btn" type="submit" disabled={!this.isEnabled}>Получить консультацию</Button>
                             </Col>
+                        </Row>
+                            <Col xs={12} sm={12} md={12} lg={12} className="text-color__white free_btn_pos">
+                                <Button className="lead_btn" type="submit">Получить бесплатный анализ</Button>
+                            </Col>
+                        <Row>
                         </Row>
                     </Grid>
                 </form>

@@ -28,9 +28,17 @@ from apps.modules.notifications.mail import Sender
 # Page Serializer
 # -------------------------------------------------------------- >
 class SectionSerializer(CachedSerializerMixin):
+    title_block = serializers.SerializerMethodField()
+
+    def get_title_block(self, obj):
+        return obj.title.replace(
+            'на бесплатную консультацию ',
+            'на <span style="color:#e32926">бесплатную</span> консультацию '
+        )
+
     class Meta:
         model = Section
-        fields = ('id', 'section', 'status', 'title')
+        fields = ('id', 'section', 'status', 'title_block')
 
 
 cache_registry.register(SectionSerializer)
@@ -57,9 +65,14 @@ class TeamDataSerializer(CachedSerializerMixin):
 
 
 class IntroDataSerializer(CachedSerializerMixin):
+    title_block = serializers.SerializerMethodField()
+
+    def get_title_block(self, obj):
+        return obj.title.replace('\n', '<br/>')
+
     class Meta:
         model = Intro
-        fields = ('title', 'subtitle')
+        fields = ('title_block', 'subtitle')
 
 
 class IntroUlDataSerializer(CachedSerializerMixin):
@@ -69,9 +82,17 @@ class IntroUlDataSerializer(CachedSerializerMixin):
 
 
 class LeadDataSerializer(CachedSerializerMixin):
+    text_field = serializers.SerializerMethodField()
+
+    def get_text_field(self, obj):
+        text_pattern = re.compile('[A-zА-я0-9]+[ ]')
+        first_word = text_pattern.search(obj.text).group()
+
+        return obj.text.replace(first_word, '<span style="color:#e32926">{}</span>'.format(first_word))
+
     class Meta:
         model = Lead
-        fields = ('id', 'text')
+        fields = ('id', 'text_field')
 
 
 cache_registry.register(ContactsDataSerializer)
@@ -152,13 +173,13 @@ class LeadCreateSerializer(serializers.ModelSerializer):
                     'error': 'Validation error!'
                 })
 
-        #try:
-        Sender(
-            'lead', {
-                'NAME':  validated_data['name'],
-                'MAIL':  validated_data['mail'],
-                }
-            ).send_mail()
-        #except: pass
+        try:
+            Sender(
+                'lead', {
+                    'NAME':  validated_data['name'],
+                    'MAIL':  validated_data['mail'],
+                    }
+                ).send_mail()
+        except: pass
 
         return LeadForm.objects.create(**validated_data)

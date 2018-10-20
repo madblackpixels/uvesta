@@ -41,37 +41,37 @@ export default class MainPage extends Component {
             <Grid fluid={true} className="no-padding">
                 {this.state.sections.map(item => {
                     if (item.section === 'Интро' && item.status === 'on') {
-                        return <Main_IntroBlock key={item.id} title={item.title} />
+                        return <Main_IntroBlock key={item.id} title={item.title_block} />
                     }
                 })}
 
                 {this.state.sections.map(item => {
                     if (item.section === 'Генератор лидов' && item.status === 'on') {
-                        return <Main_LeadBlock key={item.id} title={item.title} addNotification={this.props.addNotification} />
+                        return <Main_LeadBlock key={item.id} title={item.title_block} addNotification={this.props.addNotification} />
                     }
                 })}
 
                 {this.state.sections.map(item => {
                     if (item.section === 'Команда' && item.status === 'on') {
-                        return <Main_Team key={item.id} title={item.title} />
+                        return <Main_Team key={item.id} title={item.title_block} />
                     }
                 })}
 
                 {this.state.sections.map(item => {
                     if (item.section === 'Портфолио' && item.status === 'on') {
-                        return <Main_Portfolio key={item.id} title={item.title} />
+                        return <Main_Portfolio key={item.id} title={item.title_block} />
                     }
                 })}
 
                 {this.state.sections.map(item => {
                     if (item.section === 'Форма для связи' && item.status === 'on') {
-                        return <Main_Feedback key={item.id} title={item.title} addNotification={this.props.addNotification} />
+                        return <Main_Feedback key={item.id} title={item.title_block} addNotification={this.props.addNotification} />
                     }
                 })}
 
                 {this.state.sections.map(item => {
                     if (item.section === 'Контакты' && item.status === 'on') {
-                        return <Main_Contacts key={item.id} title={item.title} />
+                        return <Main_Contacts key={item.id} title={item.title_block} />
                     }
                 })}
             </Grid>
