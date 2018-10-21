@@ -3,8 +3,8 @@ sleep 10
 
 # prepare media files
 
-chmod 777 /media/
 cp -r /backend/media_files/* /media/
+chmod -R 777 /media/
 
 if [[ $ENV = "production" ]]; then
     rm -rf /backend/media_files
