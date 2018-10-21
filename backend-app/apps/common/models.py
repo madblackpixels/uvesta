@@ -90,7 +90,7 @@ class Portfolio(models.Model):
     name = models.CharField(max_length=150, blank=False)
     text = models.TextField(blank=False)
     show = models.BooleanField()
-    image = models.ImageField(upload_to='portfolio', blank=False)
+    image = models.ImageField(upload_to='media/portfolio', blank=False)
 
     def __str__(self):
         return self.name
@@ -104,7 +104,7 @@ class Team(models.Model):
     name = models.CharField(max_length=150, blank=False)
     text = models.TextField(blank=False)
     show = models.BooleanField()
-    image = models.ImageField(upload_to='team', blank=False)
+    image = models.ImageField(upload_to='media/team', blank=False)
 
     def __str__(self):
         return self.name
