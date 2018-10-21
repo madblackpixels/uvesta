@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 
 // bootstrap
-import { Grid, Row, Col, Glyphicon, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap'
+import { Grid, Row, Col, Glyphicon, FormGroup, FormControl, Button } from 'react-bootstrap'
+
+// common
+import {
+    Link,
+    DirectLink
+} from 'react-scroll'
+
 
 // logic
 import {getSimpleData, sendPOSTRequest} from '../../logic/General_ApiReq'
@@ -135,10 +142,19 @@ export default class Main_LeadBlock extends Component {
                                 <Button className="lead_btn" type="submit" disabled={!this.isEnabled}>Получить консультацию</Button>
                             </Col>
                         </Row>
-                            <Col xs={12} sm={12} md={12} lg={12} className="text-color__white free_btn_pos">
-                                <Button className="lead_btn" type="submit">Получить бесплатный анализ</Button>
-                            </Col>
                         <Row>
+                            <Col xs={12} sm={12} md={12} lg={12} className="text-color__white free_btn_pos">
+                                <Link
+                                    to="Feedback"
+                                    spy={true}
+                                    smooth={true}
+                                    duration={1500}
+                                    offset={-150}
+                                    className="lead_btn btn btn-default"
+                                    type="submit">
+                                    Получить бесплатный анализ
+                                </Link>
+                            </Col>
                         </Row>
                     </Grid>
                 </form>
