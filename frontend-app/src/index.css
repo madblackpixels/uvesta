@@ -395,6 +395,12 @@ h3{
     }
 }
 
+@media (max-width: 767px) {
+    .sm_crutch{
+        font-size: 24px;
+        width: 58%;
+    }
+}
 @media (max-width: 450px) {
     .sm_crutch{
         font-size: 23px;
@@ -474,6 +480,7 @@ li:before {
     }
 
 }
+
 @media (max-width: 500px) {
     h1{
         font-size: 36px;
@@ -491,6 +498,7 @@ li:before {
 @media (max-width: 395px) {
     .sm_crutch{
         font-size: 20px;
+        width: 100%;
     }
     h1{
         font-size: 38px;
@@ -835,17 +843,11 @@ li:before {
 }
 @media (max-width: 395px) {
     .intro_wall__sm{
-        height: 310px;
-        display: inherit;
-        float: right;
-        z-index: -9;
-        border-bottom: 1px solid;
-        margin-right: 25%;
-        margin-top: 0;
+        margin-right: 22%;
     }
-}
-@media (max-width: 395px) {
     .intro_wall__sm{
-        margin-right: 18%;
+        height: 353px;
+        margin-right: 16%;
+        margin-top: 0;
     }
 }
