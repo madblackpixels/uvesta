@@ -11,6 +11,34 @@ function CardData(ff) {
 // code
 class Cards extends Component {
 
+    constructor(props, context) {
+        super(props, context);
+
+        this.handleHide = this.handleHide.bind(this);
+
+        this.state = {
+            show: false,
+            modal_content: "",
+            modal_text:    "",
+        };
+    }
+
+    handleHide() {
+        this.setState({
+            show: false,
+        });
+    };
+
+    fn = function(id, name, text) {
+
+        this.setState({
+            show: true,
+            modal_title: name,
+            modal_text:  text,
+        });
+
+    };
+
     render() {
         const cardData = CardData(this.props.data);
 
@@ -21,8 +49,31 @@ class Cards extends Component {
                     cardData.map((card, i) => {
                         return (
                             <div className="card" id="card" style={this.props.cardStyle} key={i}>
-                                <a href="#"><img src={card.image} /></a>
+                                <a>
+                                    <img src={card.image} onClick={
+                                        () => this.fn(
+                                            card.id,
+                                            card.name,
+                                            card.text,
+                                        )
+                                    }
+                                    />
+                                </a>
                                 <p className="title text-color__white">{card.name}</p>
+
+                                <Modal show={this.state.show} onHide={this.handleHide}>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>
+                                            {this.state.modal_title}
+                                        </Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <p>
+                                            {this.state.modal_text}
+                                        </p>
+                                    </Modal.Body>
+                                </Modal>
+
                             </div>
                         )
                     })
@@ -94,28 +145,3 @@ export default class Portfolio__Slider extends Component {
         )
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

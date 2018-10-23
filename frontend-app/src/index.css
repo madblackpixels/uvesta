@@ -723,6 +723,14 @@ li:before {
     font-weight: 700;
 }
 
+.modal-backdrop{
+    background-color: #00000045;
+}
+.modal-content{
+    box-shadow: none;
+}
+
+
 .close:focus{
     outline: 0;
 }
