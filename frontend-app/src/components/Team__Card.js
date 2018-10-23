@@ -12,7 +12,7 @@ export default class Team__Card extends Component {
         return(
             <Col xs={12} sm={4} md={4} lg={4}>
 
-                <Thumbnail src={this.props.team_item.image} className="thumbnail__sm">
+                <Thumbnail src={this.props.team_item.image} className="thumbnail__sm text-center">
                     <h4 className="text-color__blood-red">
                         {this.props.team_item.name}
                     </h4>

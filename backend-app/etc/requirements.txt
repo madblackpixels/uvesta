@@ -7,3 +7,4 @@ pytz==2018.4
 uwsgi==2.0.17
 Pillow== 5.1.0
 rest-framework-cache
+python-resize-image

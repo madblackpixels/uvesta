@@ -3,8 +3,8 @@
     "pk": 1,
     "model": "common.portfolio",
     "fields": {
-      "name": "История 1",
-      "text": "описание истории 1",
+      "name": "Краткое описание дела 1",
+      "text": "Краткое описание дела 1",
       "show": true,
       "image": "portfolio/portfolio1.jpg"
     }
@@ -13,8 +13,8 @@
     "pk": 2,
     "model": "common.portfolio",
     "fields": {
-      "name": "История 2",
-      "text": "описание истории 2",
+      "name": "Краткое описание дела 2",
+      "text": "Краткое описание дела 2",
       "show": true,
       "image": "portfolio/portfolio2.jpg"
     }
@@ -23,10 +23,30 @@
     "pk": 3,
     "model": "common.portfolio",
     "fields": {
-      "name": "История 3",
-      "text": "описание истории 3",
+      "name": "Краткое описание дела 3",
+      "text": "Краткое описание дела 3",
       "show": true,
       "image": "portfolio/portfolio3.jpg"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "common.portfolio",
+    "fields": {
+      "name": "Краткое описание дела 4",
+      "text": "Краткое описание дела 4",
+      "show": true,
+      "image": "portfolio/portfolio4.jpg"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "common.portfolio",
+    "fields": {
+      "name": "Краткое описание дела 5",
+      "text": "Краткое описание дела 5",
+      "show": true,
+      "image": "portfolio/portfolio5.jpg"
     }
   }
 ]

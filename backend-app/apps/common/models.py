@@ -6,6 +6,12 @@ from datetime import date
 import os
 
 
+from PIL import Image
+from io import BytesIO
+from django.core.files.base import ContentFile
+from resizeimage import resizeimage
+
+
 # -------------------------------------------------------------- >
 # Site models
 class Section(models.Model):
@@ -91,6 +97,24 @@ class Portfolio(models.Model):
     text = models.TextField(blank=False)
     show = models.BooleanField()
     image = models.ImageField(upload_to='portfolio', blank=False)
+
+    def save(self, *args, **kwargs):
+        pil_image_obj = Image.open(self.image)
+        new_image = resizeimage.resize('contain', pil_image_obj, [600, 800])
+
+        new_image_io = BytesIO()
+        new_image.save(new_image_io, format='JPEG')
+
+        temp_name = self.image.name
+        self.image.delete(save=False)
+
+        self.image.save(
+            temp_name,
+            content=ContentFile(new_image_io.getvalue()),
+            save=False
+        )
+
+        super(Portfolio, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -180,3 +204,5 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
     if not old_file == new_file:
         if os.path.isfile(old_file.path):
             os.remove(old_file.path)
+
+
