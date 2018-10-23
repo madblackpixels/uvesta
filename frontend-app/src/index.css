@@ -863,6 +863,7 @@ li:before {
 	white-space: nowrap;
 	max-width: 1100px;
 	height: 100%;
+    width: 100%;
 	position: relative;
 	display: inline-block;
     background: none;
@@ -938,7 +939,7 @@ li:before {
         margin-left: 2.5%;
     }
 }
-@media (max-width: 1030px) {
+@media (max-width: 767px) {
     .card {
         width: 45%;
         clear: both;
@@ -946,7 +947,7 @@ li:before {
         margin-left: 2.5%;
     }
 }
-@media (max-width: 590px) {
+@media (max-width: 490px) {
     .card {
         width: 95%;
         clear: both;
