@@ -50,7 +50,7 @@ class Cards extends Component {
                         return (
                             <div className="card" id="card" style={this.props.cardStyle} key={i}>
                                 <a>
-                                    <img src={card.image} onClick={
+                                    <img src={card.image} style={{cursor:"pointer"}} onClick={
                                         () => this.fn(
                                             card.id,
                                             card.name,
