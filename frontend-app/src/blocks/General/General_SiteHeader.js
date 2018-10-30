@@ -27,20 +27,20 @@ export default class Header extends Component {
 
     render() {
         return(
-            <Grid fluid={true} className="block__header">
+            <Grid fluid={true} className="no-padding">
                 <Grid>
-                    <Row className="block-header">
+                    <Row className="block__header">
 
                         <Header__SiteLogo />
                         <Header__Info content={this.state.content } />
 
                     </Row>
                 </Grid>
-                <Grid fluid={true} className="no-padding" className="background-color__bright-red">
-                    <div id="block-header__triangle-bottom_one"></div>
+                <Grid fluid={true} className="no-padding">
+                    <div id="block__header-triangle-bottom_one"></div>
                 </Grid>
-                <Grid fluid={true} className="no-padding" className="background-color__blood-red">
-                    <div id="block-header__triangle-bottom_two"></div>
+                <Grid fluid={true} className="no-padding">
+                    <div id="block__header-triangle-bottom_two"></div>
                 </Grid>
             </Grid>
         )

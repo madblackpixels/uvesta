@@ -13,7 +13,6 @@ export default class Header__SiteLogo extends Component {
             <Col xs={2} sm={4} md={4} lg={4} >
                 <a href={'/'}>
                     <Image src="/system/logo.png" className="brand-logo__header" />
-                    <Image src="/system/favicon.png" className="brand-logo__header__sm" />
                 </a>
             </Col>
         )

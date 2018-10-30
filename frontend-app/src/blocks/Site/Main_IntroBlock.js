@@ -36,43 +36,43 @@ export default class Main_IntroBlock extends Component {
     render() {
 
         return(
-            <Grid fluid={true}>
-                <Grid className="block-intro">
-                    <Grid style={{ position: "relative" }}>
-                        <Row>
-                            <Col xs={12} sm={12} md={8} lg={10}>
-                                <h1 className="text-color__bright-red">
-                                    {this.props.title}
-                                </h1>
-                            </Col>
-                            <Col xs={12} sm={8} md={9} lg={10} className="intro_subtitle__sm">
-                                <h2 className="text-color__blood-red sm_crutch"
-                                    dangerouslySetInnerHTML={{__html: this.state.content.title_block}}
-                                />
-                            </Col>
-                            <Image className="intro_wall" src="system/intro_wall.png" responsive/>
-                            <Image className="intro_wall__sm" src="system/small.png"  responsive/>
-                            <Col xs={8} sm={8} md={8} lg={8} className="intro_ul__sm">
-                                <h3 className="text-color__bright-red">
-                                    {this.state.content.subtitle}
-                                </h3>
-                                <ul>
-                                    {this.state.content_ul.map(item => (
-                                        <li key={item.id}>
-                                            <Glyphicon glyph="ok" className="text-color__bright-red"/>
-                                            <span className="text-color__blood-red">
-                                                {item.text}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <br></br>
-                                <br></br>
-                            </Col>
-                        </Row>
-                    </Grid>
-                    <Grid fluid={true} className="no-padding" className="">
-                        <div id="block-intro__triangle"></div>
+            <Grid fluid={true} className="no-padding">
+                <Grid className="block__intro no-padding" fluid={true}>
+                    <Grid style={{ position: "relative" }} fluid={true} className="no-padding">
+                        <Grid>
+                            <Row>
+                                <Col xs={12} sm={12} md={8} lg={10}>
+                                    <h1 className="block__intro-h1 text-color__bright-red">
+                                        {this.props.title}
+                                    </h1>
+                                </Col>
+                                <Col xs={12} sm={8} md={9} lg={10}>
+                                    <h2 className="block__intro-h2 text-color__blood-red"
+                                        dangerouslySetInnerHTML={{__html: this.state.content.title_block}}
+                                    />
+                                </Col>
+                                <Image className="intro_wall-lg" src="system/intro_wall.png" responsive/>
+                                <Image className="intro_wall-sm" src="system/small.png"  responsive/>
+                                <Col xs={7} sm={7} md={8} lg={7} className="intro_ul__sm" style={{zIndex:"2"}}>
+                                    <h3 className="block__intro-h3 text-color__bright-red">
+                                        {this.state.content.subtitle}
+                                    </h3>
+                                    <ul>
+                                        {this.state.content_ul.map(item => (
+                                            <li key={item.id}>
+                                                <Glyphicon glyph="ok" className="text-color__bright-red"/>
+                                                <span className="text-color__blood-red">
+                                                    {item.text}
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </Col>
+                            </Row>
+                        </Grid>
+                        <Grid fluid={true} className="no-padding">
+                            <div id="block-intro__triangle"></div>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
