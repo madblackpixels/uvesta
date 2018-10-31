@@ -7,6 +7,7 @@ from .models import (
     Feedback,
     Section,
     Contact,
+    IntroUl,
     Intro,
     Team,
     Lead
@@ -83,6 +84,7 @@ admin.site.register(Contact,  ContactConfigs)
 admin.site.register(Feedback, FeedbackConfig)
 admin.site.register(LeadForm, LeadFormConfig)
 admin.site.register(Intro,    IntroConfig)
+admin.site.register(IntroUl)
 admin.site.register(Portfolio)
 admin.site.register(Team)
 admin.site.register(Lead)

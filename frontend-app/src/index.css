@@ -9,6 +9,8 @@
 .block__header{
     padding-top: 54px;
     padding-bottom: 32px;
+    z-index: 4;
+    position: relative;
 }
 .block-header__phone{
     font-size: 32px;
@@ -573,7 +575,8 @@
 	position: relative;
 	display: inline-block;
     background: none;
-    margin-top: 45px;
+    margin-top: 25px;
+    margin-bottom: 35px;
 }
 
 .card {
@@ -827,9 +830,6 @@ li:before {
 .btn-default:disabled{
     color: #000;
     font-weight: 700;
-    -webkit-box-shadow: 10px 10px 51px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 51px -1px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 51px -1px rgba(0,0,0,0.75);
 }
 .btn-default:disabled:hover{
     color: #000;
@@ -928,4 +928,71 @@ li:before {
 }
 .madblackpixels{
     font-weight: 700;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 38px;
+}
+.modal-content{
+    border-radius: 0px;
+}
+h4{
+    font-weight: 700;
+    font-size: 22px;
+}
+h5{
+    font-size: 18px;
+}
+
+#link{
+    -webkit-animation: roistat-lh-circle-anim 2.2s infinite ease-in-out;
+    -moz-animation: roistat-lh-circle-anim 2.2s infinite ease-in-out;
+    -ms-animation: roistat-lh-circle-anim 2.2s infinite ease-in-out;
+    -o-animation: roistat-lh-circle-anim 2.2s infinite ease-in-out;
+    animation: roistat-lh-circle-anim 2.2s infinite ease-in-out;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.olp .checkbox {
+    margin-right: 8px;
+}
+.olp .checkbox label{
+    line-height: 12px;
+}
+.olp input[type=checkbox]{
+    margin-top: 5px;
+}
+.modal-policy{
+    font-size: 14px;
+}
+
+@media (max-width: 610px) {
+    .modal-btn{
+        margin-top: 18px;
+    }
+    .modal-phone{
+        width: 100%;
+    }
+    h4{
+        font-size: 20px;
+    }
+    h5{
+        font-size: 16px;
+    }
+    .modal-policy{
+        font-size: 10px;
+    }
+}
+
+.policy-subtitle{
+    padding-top: 18px;
 }

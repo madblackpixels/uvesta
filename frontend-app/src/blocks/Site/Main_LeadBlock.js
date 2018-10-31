@@ -92,8 +92,8 @@ export default class Main_LeadBlock extends Component {
         return(
 
             <Grid fluid={true} className="background-color__blood-red no-padding">
-                <form onSubmit={this.handleSubmit.bind(this)}>
-                    <Grid className="block__lead">
+                <form onSubmit={this.handleSubmit.bind(this)} className="no-padding">
+                    <Grid className="block__lead ">
                         <Row>
                             <Col xs={12} sm={12} md={6} lg={6}>
                                 <p className="text-color__white block__lead-call-action">

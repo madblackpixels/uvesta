@@ -23,21 +23,20 @@ class Cards extends Component {
         };
     }
 
+    fn = function() {
+
+        this.setState({
+            show: true,
+        });
+
+    };
+
     handleHide() {
         this.setState({
             show: false,
         });
     };
 
-    fn = function(id, name, text) {
-
-        this.setState({
-            show: true,
-            modal_title: name,
-            modal_text:  text,
-        });
-
-    };
 
     render() {
         const cardData = CardData(this.props.data);

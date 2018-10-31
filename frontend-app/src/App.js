@@ -14,6 +14,7 @@ import '../node_modules/react-notifications-component/dist/theme.css'
 
 // pages
 import MainPage from './pages/MainPage'
+import PolicyPage from './pages/PolicyPage'
 
 
 // code
@@ -21,11 +22,6 @@ export default class App extends Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            siteLang : 'data_ru',
-            menuOpen : false,
-        };
 
         this.update_AppStates = this.update_AppStates.bind(this);
         this.addNotification  = this.addNotification.bind(this);
@@ -60,17 +56,26 @@ export default class App extends Component {
                  <ReactNotification ref={input => this.notificationDOMRef = input} />
 
                  <Switch>
-                     <Route path='/'
+                     <Route exact path='/'
                          render={
                              (props) =>
                                  <MainPage
                                      {...props}
-                                     lang={this.state.siteLang}
                                      addNotification={this.addNotification.bind(this)}
                                  />
                          }
                      />
+
+                     <Route exact path='/policy'
+                         render={
+                             (props) =>
+                                 <PolicyPage
+                                     {...props}
+                                 />
+                         }
+                     />
                  </Switch>
+
                  <Footer />
              </Grid>
         )

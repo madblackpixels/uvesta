@@ -33,8 +33,8 @@ export default class Main_Contacts extends Component {
 
         return(
 
-            <Grid fluid={true} className="background-color__gray">
-                <Grid fluid={true} className="no-padding" className="">
+            <Grid fluid={true} className="background-color__gray no-padding">
+                <Grid fluid={true} className="no-padding">
                     <div id="block-contacts__triangle"></div>
                 </Grid>
                 <Grid className="block-contact">

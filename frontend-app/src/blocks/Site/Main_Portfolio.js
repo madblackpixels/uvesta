@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // bootstrap
-import {Grid, Row} from 'react-bootstrap'
+import {Grid, Modal, Row} from 'react-bootstrap'
 
 // components
 import Portfolio__Slider from '../../components/Portfolio__Slider'
@@ -15,7 +15,7 @@ export default class Main_Portfolio extends Component {
 
     state = {
         content: [],
-        load: false
+        load: false,
     };
 
     updateContent() {
@@ -34,10 +34,10 @@ export default class Main_Portfolio extends Component {
 
         return(
 
-            <Grid fluid={true} className="background-color__bright-red block__portfolio_wall"
+            <Grid fluid={true} className="background-color__bright-red block__portfolio_wall no-padding"
                 style={{ backgroundImage: "url(system/portfolio_wall.jpg)"}}
             >
-                <Grid fluid={true} className="no-padding" className="">
+                <Grid fluid={true} className="no-padding">
                     <div id="block-portfolio__triangle-top"></div>
                 </Grid>
 
@@ -50,9 +50,10 @@ export default class Main_Portfolio extends Component {
                     </Row>
                 </Grid>
 
-                <Grid fluid={true} className="no-padding" className="">
+                <Grid fluid={true} className="no-padding">
                     <div id="block-portfolio__triangle-bottom"></div>
                 </Grid>
+
             </Grid>
 
         )
