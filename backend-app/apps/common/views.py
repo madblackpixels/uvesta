@@ -16,6 +16,7 @@ from apps.common.serializers import (
     LeadCreateSerializer,
     IntroDataSerializer,
     IntroUlDataSerializer,
+    LeadPhoneSerializer,
     TeamDataSerializer,
     LeadDataSerializer,
     SectionSerializer,
@@ -79,3 +80,6 @@ class LeadCreate(CreateAPIView):
     serializer_class = LeadCreateSerializer
     permission_classes = (AllowAny, )
 
+class LeadPhone(CreateAPIView):
+    serializer_class = LeadPhoneSerializer
+    permission_classes = (AllowAny,)

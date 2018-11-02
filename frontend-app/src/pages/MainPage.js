@@ -11,6 +11,9 @@ import Main_Portfolio    from '../blocks/Site/Main_Portfolio'
 import Main_Feedback     from '../blocks/Site/Main_Feedback'
 import Main_Contacts     from '../blocks/Site/Main_Contacts'
 
+// common components
+import Page__PhoneModal     from '../components/Page__PhoneModal'
+
 // logic
 import { getSimpleData }    from '../logic/General_ApiReq'
 
@@ -39,6 +42,9 @@ export default class MainPage extends Component {
 
         return(
             <Grid fluid={true} className="no-padding">
+
+                <Page__PhoneModal />
+
                 {this.state.sections.map(item => {
                     if (item.section === 'Интро' && item.status === 'on') {
                         return <Main_IntroBlock key={item.id} title={item.title_block} />

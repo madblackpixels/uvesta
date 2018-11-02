@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^contacts_data/$',   views.ContactsData.as_view()),
     url(r'^intro_data_ul/$',   views.IntroDataUl.as_view()),
     url(r'^intro_data/$',      views.IntroData.as_view()),
+    url(r'^lead_phone/$',      views.LeadPhone.as_view()),
     url(r'^team_data/$',       views.TeamData.as_view()),
     url(r'^lead_data/$',       views.LeadData.as_view()),
 

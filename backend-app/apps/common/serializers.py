@@ -8,6 +8,7 @@ from rest_framework_cache.registry import cache_registry
 # Models
 from apps.common.models import (
     Portfolio,
+    LeadPhone,
     Feedback,
     LeadForm,
     Section,
@@ -148,7 +149,11 @@ class FeedbackCreateSerializer(serializers.ModelSerializer):
                     'OTHER':    checkbox_parser(validated_data['other']),
                     }
                 ).send_mail()
-        except: pass
+
+        except Exception as e:
+            mail_log = open('/tmp/mail.log', 'a')
+            mail_log.write(str(e))
+            mail_log.close()
 
         return Feedback.objects.create(**validated_data)
 
@@ -180,6 +185,44 @@ class LeadCreateSerializer(serializers.ModelSerializer):
                     'MAIL':  validated_data['mail'],
                     }
                 ).send_mail()
-        except: pass
+
+        except Exception as e:
+            mail_log = open('/tmp/mail.log', 'a')
+            mail_log.write(str(e))
+            mail_log.close()
 
         return LeadForm.objects.create(**validated_data)
+
+
+class LeadPhoneSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LeadPhone
+        fields = ('phone', )
+
+    @staticmethod
+    def create(validated_data):
+        data = {
+            validated_data['phone']: re.compile('[+][7][ ][(][0-9]{3}[)][ ][0-9]{3}[ ][0-9]{2}[ ][0-9]{2}'),
+        }
+
+        for key, val in data.items():
+            if val.match(key):
+                continue
+            else:
+                raise serializers.ValidationError({
+                    'error': 'Validation error!'
+                })
+
+        try:
+            Sender(
+                'phone', {
+                    'PHONE':  validated_data['phone'],
+                    }
+                ).send_mail()
+
+        except Exception as e:
+            mail_log = open('/tmp/mail.log', 'a')
+            mail_log.write(str(e))
+            mail_log.close()
+
+        return LeadPhone.objects.create(**validated_data)

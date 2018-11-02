@@ -1,5 +1,48 @@
 
 
+@-webkit-keyframes rotation {
+        0%, 10%{
+            -webkit-transform: rotate(-20deg);
+        }
+        10%, 20%{
+            -webkit-transform: rotate(10deg);
+        }
+        20%, 30%{
+            -webkit-transform: rotate(-15deg);
+        }
+        30%, 40%{
+            -webkit-transform: rotate(5deg);
+        }
+        40%, 50%{
+            -webkit-transform: rotate(-10deg);
+        }
+        50%, 60%{
+            -webkit-transform: rotate(0deg);
+        }
+        50%, 100%{
+            -webkit-transform: rotate(0deg);
+        }
+
+}
+
+.modal_phone{
+    position: fixed;
+    right: 2.5%;
+    bottom: 15%;
+    z-index: 99999;
+    background-color: #5ad45c;
+    text-align: center;
+    border-radius: 10px;
+    opacity: .7;
+}
+
+
+.modal__phone-icon{
+    font-size: 42px;
+    line-height: 68px;
+    margin-left: 7px;
+    -webkit-animation: rotation 1s ease-out 1s alternate infinite;
+}
 
 
 
@@ -22,6 +65,7 @@
 }
 .brand-logo__phone{
     width: 68px;
+    height: 68px;
 }
 .block-header__info{
     margin-left: -28px;
@@ -50,14 +94,20 @@
         font-weight: 700;
     }
     .block-header__subtitle{
-        font-size: 10px;
+        font-size: 14px;
         font-weight: 700;
     }
     .brand-logo__phone{
-        width: 60px;
+        width: 64px;
+        height: 64px;
     }
+    .modal__phone-icon{
+        line-height: 64px;
+        margin-left: 7px;
+    }
+
     .block-header__info{
-        margin-left: 76px;
+        margin-left: 170px;
     }
     #block__header-triangle-bottom_two{
         border-top: 30px solid #61221d;
@@ -78,8 +128,8 @@
         padding-bottom: 18px;
     }
     .block-header__phone{
-        padding-top: 12px;
-        font-size: 20px;
+        padding-top: 5px;
+        font-size: 26px;
         font-weight: 700;
 
     }
@@ -87,10 +137,16 @@
         display: none;
     }
     .brand-logo__phone{
-        width: 48px;
+        width: 56px;
+        height: 56px;
+    }
+    .modal__phone-icon{
+        line-height: 56px;
+        font-size: 42px;
+        margin-left: 7px;
     }
     .block-header__info{
-        margin-left: 90px;
+        margin-left: 140px;
     }
     #block__header-triangle-bottom_two{
         border-top: 26px solid #61221d;
@@ -103,7 +159,7 @@
 }
 @media (max-width: 768px) {
     .block-header__info{
-        margin-left: 0px;
+        margin-left: 70px;
     }
 }
 @media (max-width: 585px) {
@@ -111,16 +167,25 @@
         width: 200px;
     }
     .block__header{
-        padding-top: 28px;
+        padding-top: 22px;
         padding-bottom: 16px;
     }
     .block-header__phone{
-        font-size: 16px;
+        font-size: 22px;
         font-weight: 700;
 
     }
+    .block-header__info{
+        margin-left: 60px;
+    }
     .brand-logo__phone{
-        width: 44px;
+        width: 48px;
+        height: 48px;
+    }
+    .modal__phone-icon{
+        line-height: 48px;
+        font-size: 34px;
+        margin-left: 7px;
     }
     #block__header-triangle-bottom_two{
         border-top: 22px solid #61221d;
@@ -136,13 +201,22 @@
         width: 160px;
     }
     .block-header__phone{
-        padding-top: 7px;
-        font-size: 16px;
+        padding-top: 5px;
+        font-size: 18px;
         font-weight: 700;
 
     }
+    .block-header__info{
+        margin-left: 50px;
+    }
     .brand-logo__phone{
-        width: 36px;
+        width: 42px;
+        height: 42px
+    }
+    .modal__phone-icon{
+        line-height: 42px;
+        font-size: 32px;
+        margin-left: 5px;
     }
 }
 @media (max-width: 425px) {
@@ -150,14 +224,22 @@
         width: 140px;
     }
     .block-header__phone{
-        padding-top: 5px;
-        font-size: 14px;
+        padding-top: 2px;
+        font-size: 18px;
         font-weight: 700;
 
     }
+    .block-header__info{
+        margin-left: 40px;
+    }
     .brand-logo__phone{
-        width: 32px;
-        margin-left: -8px;
+        width: 38px;
+        height: 38px;
+    }
+    .modal__phone-icon{
+        line-height: 38px;
+        font-size: 28px;
+        margin-left: 5px;
     }
     .earphone__sm{
         display: none;
@@ -172,6 +254,9 @@
     }
 }
 @media (max-width: 335px) {
+    .block-header__phone{
+        padding-top: 0px;
+    }
     .brand-logo__header{
         width: 120px;
     }
@@ -180,8 +265,13 @@
         padding-bottom: 14px;
     }
     .brand-logo__phone{
-        width: 24px;
-        margin-left: -8px;
+        width: 32px;
+        height: 32px;
+    }
+    .modal__phone-icon{
+        line-height: 32px;
+        font-size: 18px;
+        margin-left: 7px;
     }
     #block__header-triangle-bottom_two{
         border-top: 16px solid #61221d;
@@ -213,6 +303,7 @@
     z-index: 2;
     font-size: 32px;
     font-weight: 700;
+    margin-top: 22px;
 }
 .block__intro-h3{
     text-transform: uppercase;
@@ -933,6 +1024,28 @@ li:before {
 h2{
     font-weight: 700;
     font-size: 38px;
+    margin-top: 36px;
+    text-transform: uppercase;
+}
+@media (max-width: 991px) {
+    h2{
+        font-size: 32px;
+    }
+}
+@media (max-width: 750px) {
+    h2{
+        font-size: 26px;
+    }
+}
+@media (max-width: 600px) {
+    h2{
+        font-size: 22px;
+    }
+}
+@media (max-width: 380px) {
+    h2{
+        font-size: 20px;
+    }
 }
 .modal-content{
     border-radius: 0px;
@@ -1001,4 +1114,95 @@ a img{
 }
 .modal-backdrop.in{
     opacity: .2;
+}
+
+
+
+
+
+@media (min-width: 5000px) {
+    .modal_phone{
+        right: 36%;
+    }
+}
+@media (max-width: 4999px) {
+    .modal_phone{
+        right: 33%;
+    }
+}
+@media (max-width: 3950px) {
+    .modal_phone{
+        right: 30%;
+    }
+}
+@media (max-width: 3299px) {
+    .modal_phone{
+        right: 28%;
+    }
+}
+@media (max-width: 2999px) {
+    .modal_phone{
+        right: 26%;
+    }
+}
+@media (max-width: 2789px) {
+    .modal_phone{
+        right: 24%;
+    }
+}
+@media (max-width: 2559px) {
+    .modal_phone{
+        right: 22%;
+    }
+}
+@media (max-width: 2359px) {
+    .modal_phone{
+        right: 20%;
+    }
+}
+@media (max-width: 2200px) {
+    .modal_phone{
+        right: 18%;
+    }
+}
+@media (max-width: 2050px) {
+    .modal_phone{
+        right: 16%;
+    }
+}
+@media (max-width: 1950px) {
+    .modal_phone{
+        right: 14%;
+    }
+}
+@media (max-width: 1850px) {
+    .modal_phone{
+        right: 12%;
+    }
+}
+@media (max-width: 1750px) {
+    .modal_phone{
+        right: 10%;
+    }
+}
+@media (max-width: 1650px) {
+    .modal_phone{
+        right: 8%;
+    }
+}
+@media (max-width: 1570px) {
+    .modal_phone{
+        right: 6%;
+    }
+}
+@media (max-width: 1480px) {
+    .modal_phone{
+        right: 2.5%;
+    }
+}
+
+@media (max-width: 400px) {
+    .block-feedback__button button, .lead_btn{
+        font-size: 14px;
+    }
 }

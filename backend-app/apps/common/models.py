@@ -4,7 +4,7 @@ from django.db import models
 
 from datetime import date
 import os
-
+import re
 
 from PIL import Image
 from io import BytesIO
@@ -52,8 +52,8 @@ class Contact(models.Model):
 
 class Feedback(models.Model):
     class Meta:
-        verbose_name = 'Раздел: Заявки'
-        verbose_name_plural = 'Раздел: Заявки'
+        verbose_name = 'Лиды: Бесплатный анализ ситуации'
+        verbose_name_plural = 'Лиды: Бесплатный анализ ситуации'
 
     name = models.CharField(max_length=150, blank=False)
     phone = models.CharField(max_length=30, blank=False)
@@ -66,6 +66,10 @@ class Feedback(models.Model):
     list = models.BooleanField()
     other = models.BooleanField()
 
+    def message(self):
+        clean = re.compile('<.*?>')
+        return re.sub(clean, '\n', self.text)
+
     # system fields
     system_date = models.DateField(default=date.today, blank=False)
 
@@ -75,8 +79,8 @@ class Feedback(models.Model):
 
 class LeadForm(models.Model):
     class Meta:
-        verbose_name = 'Раздел: Лиды-заявки'
-        verbose_name_plural = 'Раздел: Лиды-заявки'
+        verbose_name = 'Лиды: Консультация'
+        verbose_name_plural = 'Лиды: Консультация'
 
     name = models.CharField(max_length=150, blank=False)
     mail = models.CharField(max_length=50,  blank=False)
@@ -88,6 +92,20 @@ class LeadForm(models.Model):
         return self.name
 
 
+class LeadPhone(models.Model):
+    class Meta:
+        verbose_name = 'Лиды: Обратный звонок'
+        verbose_name_plural = 'Лиды: Обратный звонок'
+
+    phone = models.CharField(max_length=150, blank=False)
+
+    # system fields
+    system_date = models.DateField(default=date.today, blank=False)
+
+    def __str__(self):
+        return self.phone
+
+
 class Portfolio(models.Model):
     class Meta:
         verbose_name = 'Раздел: Портфолио'
@@ -97,6 +115,7 @@ class Portfolio(models.Model):
     text = models.TextField(blank=False)
     show = models.BooleanField()
     image = models.ImageField(upload_to='portfolio', blank=False)
+    pdf = models.FileField(upload_to='pdf', blank=False)
 
     def save(self, *args, **kwargs):
         pil_image_obj = Image.open(self.image)
@@ -130,6 +149,24 @@ class Team(models.Model):
     show = models.BooleanField()
     image = models.ImageField(upload_to='team', blank=False)
 
+    def save(self, *args, **kwargs):
+        pil_image_obj = Image.open(self.image)
+        new_image = resizeimage.resize('contain', pil_image_obj, [400, 400])
+
+        new_image_io = BytesIO()
+        new_image.save(new_image_io, format='JPEG')
+
+        temp_name = self.image.name
+        self.image.delete(save=False)
+
+        self.image.save(
+            temp_name,
+            content=ContentFile(new_image_io.getvalue()),
+            save=False
+        )
+
+        super(Team, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name
 
@@ -148,8 +185,8 @@ class Intro(models.Model):
 
 class IntroUl(models.Model):
     class Meta:
-        verbose_name = 'Раздел: Интро-описание'
-        verbose_name_plural = 'Раздел: Интро-описание'
+        verbose_name = 'Раздел: Интро'
+        verbose_name_plural = 'Раздел: Интро'
 
     text = models.TextField(blank=False)
 

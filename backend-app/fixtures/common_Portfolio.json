@@ -6,7 +6,8 @@
       "name": "Краткое описание дела 1",
       "text": "Краткое описание дела 1",
       "show": true,
-      "image": "portfolio/portfolio1.jpg"
+      "image": "portfolio/portfolio1.jpg",
+      "pdf": "pdf/test1.jpg"
     }
   },
   {
@@ -16,7 +17,9 @@
       "name": "Краткое описание дела 2",
       "text": "Краткое описание дела 2",
       "show": true,
-      "image": "portfolio/portfolio2.jpg"
+      "image": "portfolio/portfolio2.jpg",
+      "pdf": "pdf/test1.jpg"
+
     }
   },
   {
@@ -26,7 +29,8 @@
       "name": "Краткое описание дела 3",
       "text": "Краткое описание дела 3",
       "show": true,
-      "image": "portfolio/portfolio3.jpg"
+      "image": "portfolio/portfolio3.jpg",
+      "pdf": "pdf/test1.jpg"
     }
   },
   {
@@ -36,7 +40,8 @@
       "name": "Краткое описание дела 4",
       "text": "Краткое описание дела 4",
       "show": true,
-      "image": "portfolio/portfolio4.jpg"
+      "image": "portfolio/portfolio4.jpg",
+      "pdf": "pdf/test1.jpg"
     }
   },
   {
@@ -46,7 +51,8 @@
       "name": "Краткое описание дела 5",
       "text": "Краткое описание дела 5",
       "show": true,
-      "image": "portfolio/portfolio5.jpg"
+      "image": "portfolio/portfolio5.jpg",
+      "pdf": "pdf/test1.jpg"
     }
   }
 ]
