@@ -145,32 +145,32 @@ export default class Feedback__Feedback extends Component {
 
                     <Col xs={12} sm={4} md={4} lg={4} className="check_box__small block-feedback__col">
                         <p className="text-color__gray">
-                            <span className="text-bold">
+                            <span className="text-bold" style={{fontSize:"16px", fontWeight:"900"}}>
                                 Отметьте документы подтверждающие долг
                             </span>
                         </p>
                         <Checkbox checked={this.state.receiptIsChecked} onChange={this.handleChange_receipt}>
-                            <span className="text-color__blood-red text-bold">
+                            <span className="text-color__blood-red text-bold" style={{fontSize:"18px"}}>
                                 Расписка
                             </span>
                         </Checkbox>
                         <Checkbox checked={this.state.contractIsChecked} onChange={this.handleChange_contract}>
-                            <span className="text-color__blood-red text-bold">
+                            <span className="text-color__blood-red text-bold" style={{fontSize:"18px"}}>
                                 Договор
                             </span>
                         </Checkbox>
                         <Checkbox checked={this.state.decisionIsChecked} onChange={this.handleChange_decision}>
-                            <span className="text-color__blood-red text-bold">
+                            <span className="text-color__blood-red text-bold" style={{fontSize:"18px"}}>
                                 Судебное решение
                             </span>
                         </Checkbox>
                         <Checkbox checked={this.state.listIsChecked} onChange={this.handleChange_list}>
-                            <span className="text-color__blood-red text-bold">
+                            <span className="text-color__blood-red text-bold" style={{fontSize:"18px"}}>
                                 Исполнительный лист
                             </span>
                         </Checkbox >
                         <Checkbox checked={this.state.otherIsChecked} onChange={this.handleChange_other}>
-                            <span className="text-color__blood-red text-bold">
+                            <span className="text-color__blood-red text-bold" style={{fontSize:"18px"}}>
                                 Другой документ
                             </span>
                         </Checkbox>
@@ -179,12 +179,13 @@ export default class Feedback__Feedback extends Component {
 
                     <Col xs={12} sm={8} md={8} lg={8} className="">
                         <FormGroup controlId="lead_text" validationState={validateInput__Text(this.state.leadText)} >
-                            <ControlLabel className="text-color__gray">Краткая история долга</ControlLabel>
+                            <ControlLabel className="text-color__gray" style={{fontSize:"16px"}}>Краткая история долга</ControlLabel>
                             <ContentEditable
                                 html={this.state.leadText}
                                 onChange={this.update_leadText}
                                 tagName="article"
                                 className="form-textarea"
+                                style={{fontSize:"16px"}}
                             />
                         </FormGroup>
                     </Col>

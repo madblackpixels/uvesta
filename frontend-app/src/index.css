@@ -996,3 +996,9 @@ h5{
 .policy-subtitle{
     padding-top: 18px;
 }
+a img{
+    cursor: pointer;
+}
+.modal-backdrop.in{
+    opacity: .2;
+}

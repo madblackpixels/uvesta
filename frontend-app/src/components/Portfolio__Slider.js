@@ -63,7 +63,7 @@ class Cards extends Component {
                                 <Modal show={this.state.show} onHide={this.handleHide}>
                                     <Modal.Header closeButton>
                                         <Modal.Title>
-                                            {this.state.modal_title}
+                                            {card.modal_title}
                                         </Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
