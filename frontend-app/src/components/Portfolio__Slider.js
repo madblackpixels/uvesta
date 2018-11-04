@@ -75,7 +75,7 @@ class Cards extends Component {
                                     <Modal.Body>
 
                                         <object data={this.state.modal_pdf} type="application/pdf" width="100%" height="600">
-                                            alt : <a href="test.pdf">test.pdf</a>
+                                            PDF файл: <a href={this.state.modal_pdf}>uvesta.pdf</a>
                                         </object>
                                     </Modal.Body>
                                 </Modal>

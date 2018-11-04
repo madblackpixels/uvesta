@@ -3,7 +3,7 @@
     "pk": 1,
     "model": "notifications.smtpconfig",
     "fields": {
-      "smtp_server": "smtp.server.ru:587",
+      "smtp_server": "smtp.yandex.ru:587",
       "sender": "uvesta.comp@yandex.ru",
       "password": "Qwerty1!qaz"
     }
@@ -26,6 +26,17 @@
       "system_description": "lead",
       "human_description": "Новый лид с сайта",
       "mail_template": "lead.tmpl",
+      "recipients": "",
+      "smtp_config_id": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "notifications.notificationmoduleconfig",
+    "fields": {
+      "system_description": "phone",
+      "human_description": "Обратный звонок",
+      "mail_template": "phone.tmpl",
       "recipients": "",
       "smtp_config_id": 1
     }

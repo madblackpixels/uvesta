@@ -37,6 +37,10 @@
     cursor: pointer;
 }
 
+.modal_phone:hover {
+    opacity: 1;
+}
+
 
 .modal__phone-icon{
     font-size: 42px;
@@ -1225,4 +1229,7 @@ a img{
 
 a:hover{
     color: #e42619;
+}
+.notification-container-top-right{
+    z-index: 99999!important;
 }

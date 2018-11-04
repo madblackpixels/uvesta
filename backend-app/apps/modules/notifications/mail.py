@@ -34,7 +34,7 @@ def get_smtp_config(_notify_type):
         Getting smtp server configs for current mail type.
     """
 
-    config_data =SmtpConfig.objects.get(
+    config_data = SmtpConfig.objects.get(
         notificationmoduleconfig__system_description=_notify_type
     )
 

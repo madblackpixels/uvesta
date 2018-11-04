@@ -1,7 +1,6 @@
 FROM python:3.6.4
 ENV PYTHONUNBUFFERED 1
 
-
 # deploy app
 WORKDIR /backend
 RUN mkdir /backend_logs
