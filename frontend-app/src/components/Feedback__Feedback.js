@@ -235,7 +235,6 @@ export default class Feedback__Feedback extends Component {
                         </FormGroup>
                     </Col>
 
-
                 </Row>
                 <Row className="text-center block-feedback__button">
                     <Button type="submit" disabled={!this.isEnabled}>Получить бесплатный анализ ситуации</Button>

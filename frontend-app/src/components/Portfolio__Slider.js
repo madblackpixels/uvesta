@@ -20,13 +20,19 @@ class Cards extends Component {
             show: false,
             modal_content: "",
             modal_text:    "",
+            modal_name:    "",
+            modal_pdf:     "",
+
         };
     }
 
-    fn = function() {
+    fn = function(id, name, text, pdf) {
 
         this.setState({
             show: true,
+            modal_text: text,
+            modal_name: name,
+            modal_pdf:  pdf,
         });
 
     };
@@ -40,7 +46,6 @@ class Cards extends Component {
 
     render() {
         const cardData = CardData(this.props.data);
-
         
         return(
             <section style={{marginLeft:"45px",marginRight:"45px",overflow:"hidden"}}>
@@ -54,22 +59,24 @@ class Cards extends Component {
                                             card.id,
                                             card.name,
                                             card.text,
+                                            card.pdf
                                         )
                                     }
                                     />
                                 </a>
                                 <p className="title text-color__white">{card.name}</p>
 
-                                <Modal show={this.state.show} onHide={this.handleHide}>
+                                <Modal show={this.state.show} onHide={this.handleHide} bsSize="large">
                                     <Modal.Header closeButton>
                                         <Modal.Title>
-                                            {card.modal_title}
+                                            {this.state.modal_name}
                                         </Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
-                                        <p>
-                                            {this.state.modal_text}
-                                        </p>
+
+                                        <object data={this.state.modal_pdf} type="application/pdf" width="100%" height="600">
+                                            alt : <a href="test.pdf">test.pdf</a>
+                                        </object>
                                     </Modal.Body>
                                 </Modal>
 

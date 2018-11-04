@@ -122,7 +122,7 @@ export default class Page__PhoneModal extends Component {
                                 <Checkbox checked={this.state.IsChecked} onChange={this.handleChange_IsChecked}>
                                     <span className="text-color__gray modal-policy">
                                         Отправляя данное сообщение, вы подтверждаете свое согласие на обработку персональных данных на условиях
-                                        <a href='/policy'> Политики конфиденциальности.</a>
+                                        <a href='/policy' className="text-color__bright-red"> Политики конфиденциальности.</a>
                                     </span>
                                 </Checkbox>
                             </Col>

@@ -56,7 +56,7 @@ class ContactsDataSerializer(CachedSerializerMixin):
 class PortfolioDataSerializer(CachedSerializerMixin):
     class Meta:
         model = Portfolio
-        fields = ('id', 'name', 'image', 'text')
+        fields = ('id', 'name', 'image', 'text', 'pdf')
 
 
 class TeamDataSerializer(CachedSerializerMixin):

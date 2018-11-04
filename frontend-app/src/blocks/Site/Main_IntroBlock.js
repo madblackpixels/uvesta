@@ -46,7 +46,7 @@ export default class Main_IntroBlock extends Component {
                                         {this.props.title}
                                     </h1>
                                 </Col>
-                                <Col xs={12} sm={8} md={9} lg={10}>
+                                <Col xs={8} sm={8} md={9} lg={10}>
                                     <h2 className="block__intro-h2 text-color__blood-red"
                                         dangerouslySetInnerHTML={{__html: this.state.content.title_block}}
                                     />

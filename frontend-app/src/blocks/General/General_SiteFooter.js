@@ -20,6 +20,12 @@ export default class General_SiteFooter extends Component {
                         </a>
                         <span>.</span>
                     </p>
+                    <p>
+                        <span className="text-color__gray modal-policy">
+                            Отправляя свои данные, вы подтверждаете свое согласие на обработку персональных данных на условиях
+                            <a href='/policy' className="text-color__bright-red"> Политики конфиденциальности.</a>
+                        </span>
+                    </p>
                 </Grid>
             </Grid>
         )

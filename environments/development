@@ -27,7 +27,7 @@ POSTGRES_PORT=5432
 POSTGRES_HOST=database
 
 ALLOWED_LIST='localhost','127.0.0.1'
-CORS_LIST='localhost','127.0.0.1'
+CORS_LIST='localhost','127.0.0.1','localhost:3000'
 
 STATIC_URL='/static/'
 MEDIA_URL='/media/'
