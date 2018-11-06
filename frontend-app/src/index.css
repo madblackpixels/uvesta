@@ -687,6 +687,15 @@
         padding-left: 15%;
         padding-right: 15%;
     }
+    h4{
+        font-size: 16px;
+    }
+    .caption{
+        padding: 0!important;
+    }
+    .thumbnail{
+        height: 400px;
+    }
 
 }
 

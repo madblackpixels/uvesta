@@ -124,10 +124,10 @@ export default class Portfolio__Slider extends Component {
 
         if(type === 'next' && currentCard < cardNumber-1) {
             currentCard++;
-            position -= (cardWidth+cardMargin+(elem*0.035));
+            position -= (cardWidth+cardMargin*2);
         } else if(type === 'prev' && currentCard > 0) {
             currentCard--;
-            position += (cardWidth+cardMargin+(elem*0.035));
+            position += (cardWidth+cardMargin*2);
         }
         this.setCard(currentCard, position);
     }
