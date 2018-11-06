@@ -8,8 +8,7 @@
       "show": true,
       "image": "team/person1.png"
     }
-  },
-  {
+  }, {
     "pk": 2,
     "model": "common.team",
     "fields": {
@@ -18,8 +17,7 @@
       "show": true,
       "image": "team/person2.png"
     }
-  },
-  {
+  }, {
     "pk": 3,
     "model": "common.team",
     "fields": {
@@ -27,6 +25,15 @@
       "text": "Описание советника",
       "show": true,
       "image": "team/person3.png"
+    }
+  }, {
+    "pk": 4,
+    "model": "common.team",
+    "fields": {
+      "name": "Пилипенко Юрий Николаевич",
+      "text": "Cоветник. Заслуженный юрист РФ, почетный адвокат РФ, стаж  юридической  работы  35 лет.",
+      "show": true,
+      "image": "team/person4.png"
     }
   }
 ]

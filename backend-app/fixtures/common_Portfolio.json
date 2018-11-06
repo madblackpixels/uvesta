@@ -3,56 +3,82 @@
     "pk": 1,
     "model": "common.portfolio",
     "fields": {
-      "name": "Краткое описание дела 1",
-      "text": "Краткое описание дела 1",
+      "name": "Взыскали долг с компании \n1 521 424 руб.",
+      "text": "Взыскали долг с компании 1 521 424 руб.",
       "show": true,
-      "image": "portfolio/portfolio1.jpg",
-      "pdf": "pdf/test1.pdf"
+      "image": "portfolio/portfolio1.png",
+      "pdf": "pdf/1.pdf"
     }
-  },
-  {
+  }, {
     "pk": 2,
     "model": "common.portfolio",
     "fields": {
-      "name": "Краткое описание дела 2",
-      "text": "Краткое описание дела 2",
+      "name": "Взыскали долг с компании \n536 900 000 руб.",
+      "text": "Взыскали долг с компании 536 900 000 руб.",
       "show": true,
-      "image": "portfolio/portfolio2.jpg",
-      "pdf": "pdf/test1.pdf"
+      "image": "portfolio/portfolio2.png",
+      "pdf": "pdf/2.pdf"
 
     }
-  },
-  {
+  }, {
     "pk": 3,
     "model": "common.portfolio",
     "fields": {
-      "name": "Краткое описание дела 3",
-      "text": "Краткое описание дела 3",
+      "name": "Взыскали долг с физ. лица \n738 131 руб.",
+      "text": "Взыскали долг с физ. лица 738 131 руб.",
       "show": true,
-      "image": "portfolio/portfolio3.jpg",
-      "pdf": "pdf/test1.pdf"
+      "image": "portfolio/portfolio3.png",
+      "pdf": "pdf/3.pdf"
     }
-  },
-  {
+  }, {
     "pk": 4,
     "model": "common.portfolio",
     "fields": {
-      "name": "Краткое описание дела 4",
-      "text": "Краткое описание дела 4",
+      "name": "Взыскали долг с физ. лица \n3 000 000 руб.",
+      "text": "Взыскали долг с физ. лица 3 000 000 руб.",
       "show": true,
-      "image": "portfolio/portfolio4.jpg",
-      "pdf": "pdf/test1.pdf"
+      "image": "portfolio/portfolio4.png",
+      "pdf": "pdf/4.pdf"
     }
-  },
-  {
+  }, {
     "pk": 5,
     "model": "common.portfolio",
     "fields": {
-      "name": "Краткое описание дела 5",
-      "text": "Краткое описание дела 5",
+      "name": "Взыскали долг с ИП \n397 984 руб.",
+      "text": "Взыскали долг с ИП 397 984 руб.",
       "show": true,
-      "image": "portfolio/portfolio5.jpg",
-      "pdf": "pdf/test1.pdf"
+      "image": "portfolio/portfolio5.png",
+      "pdf": "pdf/5.pdf"
+    }
+  }, {
+    "pk": 6,
+    "model": "common.portfolio",
+    "fields": {
+      "name": "Взыскали долг с госпредприятия \n1 406 801 руб.",
+      "text": "Взыскали долг с госпредприятия 1 406 801 руб.",
+      "show": true,
+      "image": "portfolio/portfolio6.png",
+      "pdf": "pdf/6.pdf"
+    }
+  }, {
+    "pk": 7,
+    "model": "common.portfolio",
+    "fields": {
+      "name": "Взыскали долг с ИП \n994 735 руб.",
+      "text": "Взыскали долг с ИП 994 735 руб.",
+      "show": true,
+      "image": "portfolio/portfolio7.png",
+      "pdf": "pdf/7.pdf"
+    }
+  }, {
+    "pk": 8,
+    "model": "common.portfolio",
+    "fields": {
+      "name": "Взыскали долг с физ. лица \n558 830 руб.",
+      "text": "Взыскали долг с физ. лица 558 830 руб.",
+      "show": true,
+      "image": "portfolio/portfolio8.png",
+      "pdf": "pdf/8.pdf"
     }
   }
 ]

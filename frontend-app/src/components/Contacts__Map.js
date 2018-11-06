@@ -21,7 +21,7 @@ export default class Contacts__Map extends Component {
                 this.props.content.latitude,
                 this.props.content.longitude
             ],
-            zoom: 14,
+            zoom: 16,
             controls: [],
         };
 

@@ -64,7 +64,9 @@ class Cards extends Component {
                                     }
                                     />
                                 </a>
-                                <p className="title text-color__white">{card.name}</p>
+                                <div className="title text-color__white" style={{fontSize:"15px"}}
+                                     dangerouslySetInnerHTML={{__html: card.name}}
+                                />
 
                                 <Modal show={this.state.show} onHide={this.handleHide} bsSize="large">
                                     <Modal.Header closeButton>
@@ -73,10 +75,11 @@ class Cards extends Component {
                                         </Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
-
-                                        <object data={this.state.modal_pdf} type="application/pdf" width="100%" height="600">
-                                            PDF файл: <a href={this.state.modal_pdf}>uvesta.pdf</a>
-                                        </object>
+                                        <div>
+                                            <object data={this.state.modal_pdf} type="application/pdf" width="100%" height="500px">
+                                                PDF файл: <a href={this.state.modal_pdf}>uvesta.pdf</a>
+                                            </object>
+                                        </div>
                                     </Modal.Body>
                                 </Modal>
 
@@ -121,10 +124,10 @@ export default class Portfolio__Slider extends Component {
 
         if(type === 'next' && currentCard < cardNumber-1) {
             currentCard++;
-            position -= (cardWidth+cardMargin+(elem*0.03));
+            position -= (cardWidth+cardMargin+(elem*0.035));
         } else if(type === 'prev' && currentCard > 0) {
             currentCard--;
-            position += (cardWidth+cardMargin+(elem*0.03));
+            position += (cardWidth+cardMargin+(elem*0.035));
         }
         this.setCard(currentCard, position);
     }

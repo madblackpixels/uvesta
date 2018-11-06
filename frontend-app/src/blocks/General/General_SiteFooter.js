@@ -12,7 +12,7 @@ export default class General_SiteFooter extends Component {
         return(
             <Grid fluid={true} className="background-color__blood-red">
                 <Grid className="block__footer text-center text-color__white">
-                    <p>© "ООО" ЮВЕСТА 2018.</p>
+                    <p>© ООО "ЮВЕСТА" 2018.</p>
                     <p className="no-magrin madblackpixels">
                         <span>Разработано в студии </span>
                         <a href="https://madblackpixels.com" className="text-color__white">
